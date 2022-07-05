@@ -1,18 +1,20 @@
-function aceValue(aceBool, value){
-    if(aceBool) {
-        return 11; 
-     }
-     else {
-         return 1;
-     }
-};
+function shuffle(arr) {
+    arr.sort(() => Math.random() - 0.5);
+}
 
 class card {
     constructor(suit,value) {
         switch(value) {
             case 1:
                 this.id = "ace";
-                this.value = 1;
+                this.value = function(aceBool, value){
+                    if(aceBool) {
+                    return 11; 
+                    }
+                    else {
+                        return 1;
+                    };
+                };
                 break;
             case 11:
                 this.id = "jack";
@@ -34,7 +36,15 @@ class card {
     }
 };
 
-let newCard = new card("spades",1);
-console.log(newCard.id);
-console.log(newCard.value);
-console.log(newCard.suit);
+let suits = ["clubs","spades","diamonds","hearts"];
+let deck = [];
+
+for (let i of suits){
+    for (let j = 1; j<14; j++){
+        let newCard = new card(i,j);
+        deck.push(newCard);
+    }
+};
+
+shuffle(deck);
+console.log(deck);
