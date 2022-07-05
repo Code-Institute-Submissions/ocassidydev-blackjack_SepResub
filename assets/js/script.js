@@ -56,15 +56,14 @@ function shuffle(arr) {
 }
 
 // function that adds a card to the table
-function playCard(deck, table){
+function playCard(deck, table, player){
     let aceBool;
     
     table.push(deck[0]);
     if(deck[0].id.length > 3){
         aceBool = true;
     }
-
-    console.log(`You got the ${deck[0].id} of ${deck[0].suit}!`);
+    setTimeout(() => console.log(`${player} got the ${deck[0].id} of ${deck[0].suit}!`), 1000);
     deck.shift();
 
     return aceBool;
@@ -87,63 +86,99 @@ function tallyCard(table, aceBool){
 }
 
 // function that plays a round 
-function playRound(deck, bet, player){
+function playRound(deck, bet, player, beatValue){
     let val = 0;
     let aceBool = false;
     let table = [];
 
     // Plays first 2 
     for(let i = 0; i < 2; i++){
-        aceBool = playCard(deck, table);
+        aceBool = playCard(deck, table, player);
     }
 
     val = tallyCard(table, aceBool);
     console.log(`Value on table: ${val}`);
 
-    playingLoop:
-    while(val<21){
-        let input = prompt("hit, stay or double down?");
-        switch (input){
-            case "hit":
-                aceBool = playCard(deck, table, aceBool);
-                break;
-            case "stay":
-                break playingLoop;
-            case "double down":
-                bet *= 2;
-                aceBool = playCard(deck, table, aceBool);
-                playerVal = tallyCard(table, aceBool);
-                console.log(`Value on table: ${val}`);
-                break playingLoop;
-            default:
-                console.log("Incorrect input. Type 'hit', 'stay' or 'double down'");
-                continue playingLoop;
+    if(player === "You"){
+        playingLoop:
+        while(val<21){
+            let input = prompt("hit, stay or double down?");
+            switch (input){
+                case "hit":
+                    console.log("Hit");
+                    aceBool = playCard(deck, table, player);
+                    break;
+                case "stay":
+                    console.log("Stay")
+                    break playingLoop;
+                case "double down":
+                    console.log("Double down!");
+                    bet *= 2;
+                    aceBool = playCard(deck, table, player);
+                    val = tallyCard(table, aceBool);
+                    console.log(`Value on table: ${val}`);
+                    break playingLoop;
+                default:
+                    console.log("Incorrect input. Type 'hit', 'stay' or 'double down'");
+                    continue playingLoop;
+            }
+            val = tallyCard(table, aceBool);
+            console.log(`Value on table: ${val}`);
         }
-
-        val = tallyCard(table, aceBool);
-        console.log(`Value on table: ${val}`);
     }
-    return(val);
+    else if(player === "Dealer"){
+        while(val<beatValue){
+            aceBool = playCard(deck, table, player);
+            val = tallyCard(table, aceBool);
+            console.log(`Value on table: ${val}`);
+        }
+    }
+    return[val, bet];
 }
 
 deck = buildDeck();
 shuffle(deck);
 
 let playerChips = 10000;
-let bet = prompt("Bet how much?")
-playerChips -= bet;
 
-let playerVal = playRound(deck, bet, "player")
+while(playerChips > 0){
+    console.log(`You have ${playerChips} chips`)
+    let bet = prompt("Bet how much?")
 
-if (playerVal < 21){
-    console.log("Dealer will now play");
-}
-else if(playerVal === 21){
-    console.log("Blackjack!");
-    console.log(`Won ${bet} chips!`);
-    playerChips += bet*2;
-}
-else{
-    console.log("You lose!")
-    console.log(`Lost ${bet} chips!`);
+    values = playRound(deck, bet, "You", NaN);
+    let playerVal = values[0];
+    bet = values[1];
+
+    if (playerVal < 21){
+        console.log("Dealer will now play");
+    }
+    else if(playerVal === 21){
+        console.log("Blackjack!");
+        console.log(`Won ${bet} chips!`);
+        playerChips += bet;
+        continue;
+    }
+    else{
+        console.log("You lose!");
+        console.log(`Lost ${bet} chips!`);
+        playerChips -= bet;
+        continue;
+    }
+
+    values = playRound(deck, bet, "Dealer", playerVal);
+    let dealerVal = values[0];
+
+    if(playerVal > dealerVal || dealerVal > 21){
+        console.log("You win!");
+        console.log(`Won ${bet} chips!`);
+        playerChips += bet;
+    }
+    else if(playerVal === dealerVal){
+        console.log("Standoff!");
+    }
+    else{
+        console.log("You lose!");
+        console.log(`Lost ${bet} chips!`);
+        playerChips -= bet;
+    }
 }
