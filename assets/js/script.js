@@ -57,12 +57,16 @@ function shuffle(arr) {
 
 // function that adds a card to the table
 function playCard(deck, table){
+    let aceBool;
+    
     table.push(deck[0]);
     if(deck[0].id.length > 3){
-        let aceBool = true;
-    }    
+        aceBool = true;
+    }
 
+    console.log(`You got the ${deck[0].id} of ${deck[0].suit}!`);
     deck.shift();
+
     return aceBool;
 }
 
@@ -82,37 +86,64 @@ function tallyCard(table, aceBool){
     return(value);
 }
 
+// function that plays a round 
+function playRound(deck, bet, player){
+    let val = 0;
+    let aceBool = false;
+    let table = [];
+
+    // Plays first 2 
+    for(let i = 0; i < 2; i++){
+        aceBool = playCard(deck, table);
+    }
+
+    val = tallyCard(table, aceBool);
+    console.log(`Value on table: ${val}`);
+
+    playingLoop:
+    while(val<21){
+        let input = prompt("hit, stay or double down?");
+        switch (input){
+            case "hit":
+                aceBool = playCard(deck, table, aceBool);
+                break;
+            case "stay":
+                break playingLoop;
+            case "double down":
+                bet *= 2;
+                aceBool = playCard(deck, table, aceBool);
+                playerVal = tallyCard(table, aceBool);
+                console.log(`Value on table: ${val}`);
+                break playingLoop;
+            default:
+                console.log("Incorrect input. Type 'hit', 'stay' or 'double down'");
+                continue playingLoop;
+        }
+
+        val = tallyCard(table, aceBool);
+        console.log(`Value on table: ${val}`);
+    }
+    return(val);
+}
+
 deck = buildDeck();
 shuffle(deck);
 
 let playerChips = 10000;
-let playerTable = [];
-let playerVal = 0;
-let aceBool = false;
+let bet = prompt("Bet how much?")
+playerChips -= bet;
 
-// Plays first 2 
-for(let i = 0; i < 2; i++){
-    aceBool = playCard(deck, playerTable, aceBool);
-    console.log(`You got the ${playerTable[playerTable.length-1].id} of ${playerTable[playerTable.length-1].suit}!`);
+let playerVal = playRound(deck, bet, "player")
+
+if (playerVal < 21){
+    console.log("Dealer will now play");
 }
-
-playerVal = tallyCard(playerTable, aceBool);
-
-console.log(playerTable[0].id);
-console.log(playerTable[1].id);
-console.log(aceBool);
-console.log(playerVal);
-
-// while(playerVal<21){
-
-// }
-
-// if (playerVal < 21){
-
-// }
-// else if(playerVal === 21){
-//     console.log("Blackjack!");
-// }
-// else{
-//     console.log("You lose!")
-// }
+else if(playerVal === 21){
+    console.log("Blackjack!");
+    console.log(`Won ${bet} chips!`);
+    playerChips += bet*2;
+}
+else{
+    console.log("You lose!")
+    console.log(`Lost ${bet} chips!`);
+}
