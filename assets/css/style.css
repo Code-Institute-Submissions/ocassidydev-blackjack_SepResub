@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Roboto:wght@500&display=swap');
+
 * {
     margin: 0;
     border: none;
@@ -5,7 +7,16 @@
 }
 
 body {
-    background: green;
+    background: #33691E;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+.centered{
+    text-align: center;
 }
 
 button {
@@ -18,10 +29,8 @@ button {
 }
 
 #button-div {
-    margin: 0 40%;
+    margin: 5% 40%;
     width: 20%;
-    position: absolute;
-    bottom: 0;
 }
 
 #stay {
@@ -34,4 +43,26 @@ button {
 
 #double-down{
     float: right;
+}
+
+footer {
+    height: 10rem;
+    background-color: #2C372E;
+}
+
+footer ul {
+    line-height: 7rem;
+}
+
+footer li {
+    display: inline;
+    margin: 0 30px;
+}
+
+footer a {
+    color: #BDDFB3;
+}
+
+footer p {
+    color: #BDDFB3;
 }
