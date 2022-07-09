@@ -1,15 +1,14 @@
 // class for defining card objects
 class card {
-    constructor(suit,value) {
-        switch(value) {
+    constructor(suit, value) {
+        switch (value) {
             case 1:
                 this.id = "ace";
                 // ace can have value of 1 or 11, this function is to handle this
-                this.value = function(aceBool, value){
-                    if(aceBool) {
-                    return 11; 
-                    }
-                    else {
+                this.value = function (aceBool, value) {
+                    if (aceBool) {
+                        return 11;
+                    } else {
                         return 1;
                     };
                 };
@@ -35,19 +34,19 @@ class card {
 };
 
 // function to build an array of card objects
-function buildDeck(){
-    let suits = ["clubs","spades","diamonds","hearts"];
+function buildDeck() {
+    let suits = ["clubs", "spades", "diamonds", "hearts"];
     let deck = [];
 
     // nested for loop to populate deck
-    for (let i of suits){
-        for (let j = 1; j<14; j++){
-            let newCard = new card(i,j);
+    for (let i of suits) {
+        for (let j = 1; j < 14; j++) {
+            let newCard = new card(i, j);
             deck.push(newCard);
         }
     };
 
-    return(deck);
+    return (deck);
 }
 
 // function for randomly sorting the array of cards
@@ -56,54 +55,52 @@ function shuffle(arr) {
 }
 
 // function that adds a card to the table
-function playCard(deck, table, player){
+function playCard(deck, table, player) {
     let aceBool;
-    
+
     table.push(deck[0]);
-    if(deck[0].id.length > 3){
+    if (deck[0].id.length > 3) {
         aceBool = true;
     }
-    setTimeout(() => console.log(`${player} got the ${deck[0].id} of ${deck[0].suit}!`), 1000);
+    console.log(`${player} got the ${deck[0].id} of ${deck[0].suit}!`);
     deck.shift();
 
     return aceBool;
 }
 
 // function that counts up card values
-function tallyCard(table, aceBool){
+function tallyCard(table, aceBool) {
     let value = 0;
-    
-    for (let i of table){
-        if(i.id === "ace"){
+
+    for (let i of table) {
+        if (i.id === "ace") {
             value += i.value(aceBool);
-        }
-        else{
+        } else {
             value += i.value;
         }
     }
 
-    return(value);
+    return (value);
 }
 
 // function that plays a round 
-function playRound(deck, bet, player, beatValue){
+function playRound(deck, bet, player, beatValue) {
     let val = 0;
     let aceBool = false;
     let table = [];
 
     // Plays first 2 
-    for(let i = 0; i < 2; i++){
-        aceBool = playCard(deck, table, player);
+    for (let i = 0; i < 2; i++) {
+        aceBool = playCard(deck, table, player)
     }
 
     val = tallyCard(table, aceBool);
     console.log(`Value on table: ${val}`);
 
-    if(player === "You"){
-        playingLoop:
-        while(val<21){
+    if (player === "You") {
+        playingLoop: while (val < 21) {
             let input = prompt("hit, stay or double down?");
-            switch (input){
+            switch (input) {
                 case "hit":
                     console.log("Hit");
                     aceBool = playCard(deck, table, player);
@@ -114,7 +111,7 @@ function playRound(deck, bet, player, beatValue){
                 case "double down":
                     console.log("Double down!");
                     bet *= 2;
-                    aceBool = playCard(deck, table, player);
+                    aceBool = playCard(deck, table, player)
                     val = tallyCard(table, aceBool);
                     console.log(`Value on table: ${val}`);
                     break playingLoop;
@@ -126,14 +123,14 @@ function playRound(deck, bet, player, beatValue){
             console.log(`Value on table: ${val}`);
         }
     }
-    else if(player === "Dealer"){
-        while(val<beatValue){
-            aceBool = playCard(deck, table, player);
+    else if (player === "Dealer") {
+        while (val < beatValue) {
+            aceBool = playCard(deck, table, player)
             val = tallyCard(table, aceBool);
             console.log(`Value on table: ${val}`);
         }
     }
-    return[val, bet];
+    return [val, bet];
 }
 
 deck = buildDeck();
@@ -141,7 +138,7 @@ shuffle(deck);
 
 let playerChips = 10000;
 
-while(playerChips > 0){
+while (playerChips > 0) {
     console.log(`You have ${playerChips} chips`)
     let bet = prompt("Bet how much?")
 
@@ -149,16 +146,14 @@ while(playerChips > 0){
     let playerVal = values[0];
     bet = values[1];
 
-    if (playerVal < 21){
+    if (playerVal < 21) {
         console.log("Dealer will now play");
-    }
-    else if(playerVal === 21){
+    } else if (playerVal === 21) {
         console.log("Blackjack!");
         console.log(`Won ${bet} chips!`);
         playerChips += bet;
         continue;
-    }
-    else{
+    } else {
         console.log("You lose!");
         console.log(`Lost ${bet} chips!`);
         playerChips -= bet;
@@ -168,17 +163,17 @@ while(playerChips > 0){
     values = playRound(deck, bet, "Dealer", playerVal);
     let dealerVal = values[0];
 
-    if(playerVal > dealerVal || dealerVal > 21){
+    if (playerVal > dealerVal || dealerVal > 21) {
         console.log("You win!");
         console.log(`Won ${bet} chips!`);
         playerChips += bet;
-    }
-    else if(playerVal === dealerVal){
+    } else if (playerVal === dealerVal) {
         console.log("Standoff!");
-    }
-    else{
+    } else {
         console.log("You lose!");
         console.log(`Lost ${bet} chips!`);
         playerChips -= bet;
     }
 }
+
+// queen bug + concatenation
