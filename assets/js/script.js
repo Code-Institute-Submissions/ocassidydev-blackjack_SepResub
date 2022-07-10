@@ -88,10 +88,23 @@ class hand{
         // function that clear the cards from the hand
         this.discard = function(discardDeck) {
             let iter = this.cards.length;
+            let cardSpots = document.getElementById(this.handOwner+"-hand").children;
 
-            for(let i = 0; i<iter; i++){
+            for(let j = iter; j>=0; j--){
+                let i = this.nextCardSpot[0];
+                let image = cardSpots[i].children[0];
+
+                image.setAttribute("src", "");
+                cardSpots[i].style.paddingTop = "14%";
+                image.setAttribute("alt","");
+
+                this.nextCardSpot[0] += (this.nextCardSpot[2]-1) * this.nextCardSpot[1];
+                this.nextCardSpot[1] *= -1;
+                this.nextCardSpot[2] -= 1;
                 discardDeck.cards.push(this.cards.pop())
             }
+
+            this.nextCardSpot = [4,-1,1];
         }
         // function that adds up the value of the hand
         this.sumUp = function() {
@@ -114,18 +127,25 @@ class hand{
 
 // function to update chip display
 function updateChips(value) {
-    let chipSpan = document.getElementById("chips").innerHTML;
-    let curChips = parseInt(chipSpan);
+    let chipSpan = document.getElementById("chips");
+    let curChips = parseInt(chipSpan.innerHTML);
     let newChips = curChips + value;
-    chipSpan = newChips; 
+    chipSpan.innerHTML = newChips; 
 }
 
 // function to update bet display
-function updateBet(value) {
-    let betSpan = document.getElementById("bet-chips").innerHTML;
-    let curBet = parseInt(betSpan);
-    let newBet = curBet + value;
-    betSpan = newBet;
+function updateBet() {
+    let betSpan = document.getElementById("bet-chips");
+    let curBet = parseInt(betSpan.innerHTML);
+    let newBet = curBet + parseInt(document.getElementById("bet").value)
+    
+    betSpan.innerHTML = newBet;
+}
+
+// function that resets bet
+function resetBet(){
+    let betSpan = document.getElementById("bet-chips");
+    betSpan.innerHTML = 0;
 }
 
 // function to begin the round
@@ -158,17 +178,17 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
 }
 
 function dealerPlay(hand, deck, discard, beatVal){
-    while(hand.sumUp <= beatVal || (hand.sumUp < 17 && hand.sumUp != beatVal)){
+    while(hand.sumUp() <= beatVal || (hand.sumUp() < 17 && hand.sumUp != beatVal)){
         hand.playCard(deck, discard);
     }
 
-    if(hand.sumUp > 21){
+    if(hand.sumUp() > 21){
         endMessage(1);
     }
-    else if(hand.sumUp <= 21 && hand.sumUp > beatVal){
+    else if(hand.sumUp() <= 21 && hand.sumUp() > beatVal){
         endMessage(2);
     }
-    else if(hand.sumUp <= 21 && hand.sumUp === beatVal){
+    else if(hand.sumUp() <= 21 && hand.sumUp() === beatVal){
         endMessage(3);
     }
     else{
@@ -186,19 +206,19 @@ function endMessage(returnValue){
             endDiv[0].innerHTML = "Blackjack!";
             endDiv[1].innerHTML = `You won ${bet} chips!`;
             updateChips(bet);
-            updateBet(0);
+            resetBet();
             break;
         case 1:
             endDiv[0].innerHTML = "You win!";
             endDiv[1].innerHTML = `You won ${bet} chips!`;
             updateChips(bet);
-            updateBet(0);
+            resetBet();
             break;
         case 2:
             endDiv[0].innerHTML = "You lose!";
             endDiv[1].innerHTML = `You lost ${bet} chips...`
             updateChips(-bet);
-            updateBet(0);
+            resetBet();
             break;
         case 3:
             endDiv[0].innerHTML = "Tie!";

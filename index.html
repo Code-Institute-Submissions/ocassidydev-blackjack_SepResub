@@ -22,7 +22,7 @@
         <div id="form">
             <label for="bet">Chips:</label>
             <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
-            <button onclick="updateBet(); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck, NaN);">Bet!</button>
+            <button onclick="updateBet(NaN); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);">Bet!</button>
         </div>
     </div>
 
@@ -30,7 +30,7 @@
     <div id="end-message" class="centre-message">
         <h1></h1>
         <h2></h2>
-        <button onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('blackjack'); divAppear('gamble-amount');">Play again</button>
+        <button onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');">Play again</button>
     </div>
 
     <!-- div for displaying how many chips the player has -->
