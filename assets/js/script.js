@@ -59,7 +59,7 @@ class hand{
     constructor(player){
         this.cards = [];
         this.handOwner = player;
-        this.nextCardSpot = [5,-1,1]
+        this.nextCardSpot = [4,-1,1]
         // function that plays a card from the deck to the hand
         this.playCard = function(deck, discard) {
             if(deck.cards.length == 0){
@@ -69,7 +69,20 @@ class hand{
             }
             
             console.log(`${this.handOwner} got the ${deck.cards[0].id} of ${deck.cards[0].suit}!`);
-            
+            let i = this.nextCardSpot[0];
+            let imgName = `${deck.cards[0].id}${deck.cards[0].suit}`;
+
+            let cardSpots = document.getElementById(this.handOwner+"-hand").children;
+            let image = cardSpots[i].children[0];
+
+            image.setAttribute("src", "assets/images/"+imgName+".png");
+            cardSpots[i].style.paddingTop = 0;
+            image.setAttribute("alt",`The ${deck.cards[0].id}of ${deck.cards[0].suit}`);
+
+            this.nextCardSpot[0] += this.nextCardSpot[2] * this.nextCardSpot[1];
+            this.nextCardSpot[1] *= -1;
+            this.nextCardSpot[2] += 1;
+
             this.cards.push(deck.cards.shift());
         }
         // function that clear the cards from the hand
