@@ -31,9 +31,34 @@
     <img src="assets/images/chips-icon.webp" alt="Casino chips">
     <h2>= <span id="chips"> 0</span></h2>
     </div>
+
+    <div id="dealer-hand" class="hand">
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+    </div>
+
+    <div id="table"></div>
+
+    <div id="dealer-hand" class="hand">
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+        <div class="card-div"></div>
+    </div>
+
     <div id="game-buttons-div">
         <button id="stay" class="game-button">Stay</button>
-        <button id="hit" class="game-button">Hit!</button>
+        <button id="hit" class="game-button" onclick="playerHand.playCard(cardDeck,discardDeck);">Hit!</button>
         <button id="double-down" class="game-button">Double down!</button>
     </div>
 

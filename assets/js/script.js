@@ -59,9 +59,17 @@ class hand{
     constructor(player){
         this.cards = [];
         this.handOwner = player;
+        this.nextCardSpot = [5,-1,1]
         // function that plays a card from the deck to the hand
-        this.playCard = function(deck) {
-            console.log(`${this.handOwner} got the ${deck.cards[0].id} of ${deck.cards[0].suit}!`)
+        this.playCard = function(deck, discard) {
+            if(deck.cards.length == 0){
+                deck = discard;
+                discard = new deck([]);
+                deck.shuffle();
+            }
+            
+            console.log(`${this.handOwner} got the ${deck.cards[0].id} of ${deck.cards[0].suit}!`);
+            
             this.cards.push(deck.cards.shift());
         }
         // function that clear the cards from the hand

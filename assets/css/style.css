@@ -98,6 +98,28 @@ li {
     margin: 10% 0;
 }
 
+/* cards */
+.hand{
+    clear: both;
+}
+
+.card-div{
+    display: inline-block;
+    width: 10%;
+    padding-top: 15%;
+    margin: 1%;
+    border: 3px solid white;
+    border-radius: 5%;
+}
+
+.card-div img{
+    width: 100%;
+}
+
+#table {
+    height: 5vh;
+}
+
 /* button stylings */
 button {
     padding: 1% 2%;
