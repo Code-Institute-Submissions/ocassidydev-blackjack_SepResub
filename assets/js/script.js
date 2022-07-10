@@ -5,12 +5,13 @@ class card {
             case 1:
                 this.id = "ace";
                 // ace can have value of 1 or 11, this function is to handle this
-                this.value = function (aceBool, value) {
-                    if (aceBool) {
+                this.value = function(sum) {
+                    if(sum<11) {
                         return 11;
-                    } else {
+                    }
+                    else {
                         return 1;
-                    };
+                    }
                 };
                 break;
             case 11:
@@ -33,147 +34,78 @@ class card {
     }
 };
 
-// function to build an array of card objects
-function buildDeck() {
-    let suits = ["clubs", "spades", "diamonds", "hearts"];
-    let deck = [];
+// Class definition for deck objects
+class deck{
+    constructor(suits){
+        this.cards = [];
 
-    // nested for loop to populate deck
-    for (let i of suits) {
-        for (let j = 1; j < 14; j++) {
-            let newCard = new card(i, j);
-            deck.push(newCard);
-        }
-    };
-
-    return (deck);
-}
-
-// function for randomly sorting the array of cards
-function shuffle(arr) {
-    arr.sort(() => Math.random() - 0.5);
-}
-
-// function that adds a card to the table
-function playCard(deck, table, player) {
-    let aceBool;
-
-    table.push(deck[0]);
-    if (deck[0].id.length > 3) {
-        aceBool = true;
-    }
-    console.log(`${player} got the ${deck[0].id} of ${deck[0].suit}!`);
-    deck.shift();
-
-    return aceBool;
-}
-
-// function that counts up card values
-function tallyCard(table, aceBool) {
-    let value = 0;
-
-    for (let i of table) {
-        if (i.id === "ace") {
-            value += i.value(aceBool);
-        } else {
-            value += i.value;
-        }
-    }
-
-    return (value);
-}
-
-// function that plays a round 
-function playRound(deck, bet, player, beatValue) {
-    let val = 0;
-    let aceBool = false;
-    let table = [];
-
-    // Plays first 2 
-    for (let i = 0; i < 2; i++) {
-        aceBool = playCard(deck, table, player)
-    }
-
-    val = tallyCard(table, aceBool);
-    console.log(`Value on table: ${val}`);
-
-    if (player === "You") {
-        playingLoop: while (val < 21) {
-            let input = prompt("hit, stay or double down?");
-            switch (input) {
-                case "hit":
-                    console.log("Hit");
-                    aceBool = playCard(deck, table, player);
-                    break;
-                case "stay":
-                    console.log("Stay")
-                    break playingLoop;
-                case "double down":
-                    console.log("Double down!");
-                    bet *= 2;
-                    aceBool = playCard(deck, table, player)
-                    val = tallyCard(table, aceBool);
-                    console.log(`Value on table: ${val}`);
-                    break playingLoop;
-                default:
-                    console.log("Incorrect input. Type 'hit', 'stay' or 'double down'");
-                    continue playingLoop;
+        // nested for loop to populate deck
+        for(let i of suits) {
+            for(let j = 1; j<14; j++){
+                let newCard = new card(i, j);
+                this.cards.push(newCard);
             }
-            val = tallyCard(table, aceBool);
-            console.log(`Value on table: ${val}`);
         }
-    }
-    else if (player === "Dealer") {
-        while (val < beatValue) {
-            aceBool = playCard(deck, table, player)
-            val = tallyCard(table, aceBool);
-            console.log(`Value on table: ${val}`);
+
+        // function for randomly sorting the array of cards
+        this.shuffle = function() {
+            this.cards.sort(() => Math.random() - 0.5);
         }
-    }
-    return [val, bet];
-}
-
-deck = buildDeck();
-shuffle(deck);
-
-let playerChips = 10000;
-
-while (playerChips > 0) {
-    console.log(`You have ${playerChips} chips`)
-    let bet = prompt("Bet how much?")
-
-    values = playRound(deck, bet, "You", NaN);
-    let playerVal = values[0];
-    bet = values[1];
-
-    if (playerVal < 21) {
-        console.log("Dealer will now play");
-    } else if (playerVal === 21) {
-        console.log("Blackjack!");
-        console.log(`Won ${bet} chips!`);
-        playerChips += bet;
-        continue;
-    } else {
-        console.log("You lose!");
-        console.log(`Lost ${bet} chips!`);
-        playerChips -= bet;
-        continue;
-    }
-
-    values = playRound(deck, bet, "Dealer", playerVal);
-    let dealerVal = values[0];
-
-    if (playerVal > dealerVal || dealerVal > 21) {
-        console.log("You win!");
-        console.log(`Won ${bet} chips!`);
-        playerChips += bet;
-    } else if (playerVal === dealerVal) {
-        console.log("Standoff!");
-    } else {
-        console.log("You lose!");
-        console.log(`Lost ${bet} chips!`);
-        playerChips -= bet;
     }
 }
 
-// queen bug + concatenation
+// Class definition for hand object
+class hand{
+    constructor(player){
+        this.cards = [];
+        this.handOwner = player;
+        // function that plays a card from the deck to the hand
+        this.playCard = function(deck) {
+            console.log(`${this.handOwner} got the ${deck.cards[0].id} of ${deck.cards[0].suit}!`)
+            this.cards.push(deck.cards.shift());
+        }
+        // function that clear the cards from the hand
+        this.discard = function(discardDeck) {
+            let iter = this.cards.length;
+
+            for(let i = 0; i<iter; i++){
+                discardDeck.cards.push(this.cards.pop())
+            }
+        }
+        // function that adds up the value of the hand
+        this.sumUp = function() {
+            let sum = 0;
+            
+            for(let i in this.cards){
+                if(i.id === "ace"){
+                    sum += i.value(sum);
+                }
+                else{
+                    sum += i.value;
+                }
+            }
+
+            console.log(`player has value ${sum} in hand!`);
+            return sum;
+        }
+    }
+}
+
+// function sumUpHand(hand){
+
+// }
+
+let suits = ["clubs","diamonds","hearts","spades"]
+
+let cardDeck = new deck(suits);
+let discardDeck = new deck([]);
+
+cardDeck.shuffle();
+
+let playerHand = new hand("player");
+let dealerHand = new hand("dealer");
+
+playerHand.playCard(cardDeck);
+playerHand.playCard(cardDeck);
+
+playerHand.discard(discardDeck);
