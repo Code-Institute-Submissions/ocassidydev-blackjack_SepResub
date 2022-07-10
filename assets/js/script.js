@@ -331,7 +331,9 @@ function endMessage(returnValue){
  */
 function discard(playerHand, dealerHand, discardDeck) {
     playerHand.discard(discardDeck);
+    document.getElementById("player-value").innerHTML = 0;
     dealerHand.discard(discardDeck);
+    document.getElementById("dealer-value").innerHTML = 0;
 }
 
 /**
