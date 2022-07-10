@@ -160,6 +160,16 @@ function updateChips(value) {
         const endDiv = document.getElementById("end-message").children;
         endDiv[0].innerHTML = "Out of chips!";
         endDiv[1].innerHTML = "You gambled away every chip you had. However, as we're feeling nice, have another 1000!"
+        endDiv[2].innerHTML = "Thanks";
+        endDiv[2].setAttribute("onclick", "discard(playerHand, dealerHand, discardDeck); updateChips(1000); divDisappear('end-message'); divAppear('gamble-amount');")
+    }
+    // Easrter egg if the player gets to 10000
+    else if(newChips > 10000){
+        const endDiv = document.getElementById("end-message").children;
+        endDiv[0].innerHTML = "Stop Cheating!";
+        endDiv[1].innerHTML = "We can tell you're counting cards! Get out of our casino!"
+        endDiv[2].innerHTML = "Run away";
+        endDiv[2].setAttribute("onclick", "window.location.reload();")
     }
 }
 
@@ -168,8 +178,8 @@ function updateChips(value) {
  */
 function updateBet() {
     const betSpan = document.getElementById("bet-chips");
-    let curBet = parseInt(betSpan.innerHTML);
-    let newBet = curBet + parseInt(document.getElementById("bet").value)
+    const curBet = parseInt(betSpan.innerHTML);
+    const newBet = curBet + parseInt(document.getElementById("bet").value)
     
     betSpan.innerHTML = newBet;
 }
@@ -178,7 +188,7 @@ function updateBet() {
  * resets bet
  */
 function resetBet(){
-    let betSpan = document.getElementById("bet-chips");
+    const betSpan = document.getElementById("bet-chips");
     betSpan.innerHTML = 0;
 }
 
