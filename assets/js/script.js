@@ -1,5 +1,7 @@
-// Class definition for card objects
-class card {
+/**
+ * 
+ */
+class Card {
     constructor(suit, value) {
         switch (value) {
             case 1:
@@ -35,14 +37,14 @@ class card {
 };
 
 // Class definition for deck objects, which hold card objects
-class deck{
+class Deck{
     constructor(suits){
         this.cards = [];
 
         // nested for loop to populate deck
         for(let i of suits) {
             for(let j = 1; j<14; j++){
-                let newCard = new card(i, j);
+                let newCard = new Card(i, j);
                 this.cards.push(newCard);
             }
         }
@@ -55,7 +57,7 @@ class deck{
 }
 
 // Class definition for hand object, which hold card objects and game functions
-class hand{
+class Hand{
     constructor(player){
         this.cards = [];
         this.handOwner = player;
@@ -63,8 +65,8 @@ class hand{
         // function that plays a card from the deck to the hand
         this.playCard = function(deck, discard) {
             if(deck.cards.length == 0){
-                deck = discard;
-                discard = new deck([]);
+                deck.cards = discard.cards;
+                discard.cards = [];
                 deck.shuffle();
             }
             
@@ -87,11 +89,12 @@ class hand{
         }
         // function that clear the cards from the hand
         this.discard = function(discardDeck) {
-            let iter = this.cards.length;
+            const iter = this.cards.length;
             let cardSpots = document.getElementById(this.handOwner+"-hand").children;
+            let i;
 
             for(let j = iter; j>=0; j--){
-                let i = this.nextCardSpot[0];
+                i = this.nextCardSpot[0];
                 let image = cardSpots[i].children[0];
 
                 image.setAttribute("src", "");
@@ -119,13 +122,16 @@ class hand{
                 }
             }
 
-            console.log(`player has value ${sum} in hand!`);
+            document.getElementById(this.handOwner+"-value").innerHTML = sum;
             return sum;
         }
     }
 }
 
-// function to update chip display
+/**
+ * updating player chips
+ * @param {int} value 
+ */
 function updateChips(value) {
     let chipSpan = document.getElementById("chips");
     let curChips = parseInt(chipSpan.innerHTML);
@@ -162,6 +168,14 @@ function startRound(hand, deck, discard){
     }
 }
 
+/**
+ * taking player control input
+ * @param {Hand} playerHand 
+ * @param {Hand} dealerHand 
+ * @param {Deck} deck 
+ * @param {Deck} discard 
+ * @param {int} choice 
+ */
 function roundContinue(playerHand, dealerHand, deck, discard, choice){
     switch(choice) {
         case 1:
@@ -179,7 +193,8 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
             }
             break;
         case 3:
-            let betSpan = getElementById("bet-chips");
+            divDisappear("double-down");
+            let betSpan = document.getElementById("bet-chips");
             betSpan.innerHTML = parseInt(betSpan.innerHTML)*2;
             playerHand.playCard(deck, discard);
             if(playerHand.sumUp()===21){
@@ -197,6 +212,13 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
     }
 }
 
+/**
+ * dealer tries to beat player, or draw over 17
+ * @param {Hand} hand 
+ * @param {Deck} deck 
+ * @param {Deck} discard 
+ * @param {int} beatVal 
+ */
 function dealerPlay(hand, deck, discard, beatVal){
     divDisappear("game-buttons-div");
 
@@ -218,7 +240,10 @@ function dealerPlay(hand, deck, discard, beatVal){
     }
 }
 
-// function to display endgame message
+/**
+ * Displays endgames messages
+ * @param {int} returnValue 
+ */
 function endMessage(returnValue){
     divDisappear("game-buttons-div");
 
@@ -272,10 +297,10 @@ window.onload = divAppear("welcome");
 
 let suits = ["clubs","diamonds","hearts","spades"];
 
-let cardDeck = new deck(suits);
-let discardDeck = new deck([]);
+const cardDeck = new Deck(suits);
+let discardDeck = new Deck([]);
 
 cardDeck.shuffle();
 
-let playerHand = new hand("player");
-let dealerHand = new hand("dealer");
+let playerHand = new Hand("player");
+let dealerHand = new Hand("dealer");

@@ -30,7 +30,7 @@
     <div id="end-message" class="centre-message">
         <h1></h1>
         <h2></h2>
-        <button onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');">Play again</button>
+        <button id="play-again-button" onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');" class="centre-message-button">Play again</button>
     </div>
 
     <!-- div for displaying how many chips the player has -->
@@ -41,6 +41,10 @@
     <div id="bet-div" class="chips-display">
         <img src="assets/images/bet-icon.webp" alt="Bet amount">
         <h2><span id="bet-chips"> 0</span></h2>
+    </div>
+
+    <div id = "dealer-value-div" class="chips-display value-display">
+        <h2><img src="assets/images/hand-icon.png" alt="Value of dealer's hand"><span id="dealer-value">0</span></h2>
     </div>
 
     <div id="dealer-hand" class="hand">
@@ -54,7 +58,11 @@
         <div class="card-div"><img src="" alt=""></div>
     </div>
 
-    <div id="table"></div>
+    <div id="table">
+        <div id = "player-value-div" class="chips-display value-display">
+            <h2><img src="assets/images/hand-icon.png" alt="Value of player's hand"><span id="player-value">0</span></h2>
+        </div>
+    </div>
 
     <div id="player-hand" class="hand">
         <div class="card-div"><img src="" alt=""></div>
@@ -72,7 +80,6 @@
         <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
         <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
     </div>
-
     <footer>
         <ul class="centered">
             <li>

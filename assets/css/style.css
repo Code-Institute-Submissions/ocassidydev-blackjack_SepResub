@@ -45,6 +45,10 @@ li {
     margin: 0 0 5% 0;
 }
 
+#play-again-button{
+    width: 100%;
+}
+
 /* chips div */
 .chips-display{
     padding: 1%;
@@ -65,7 +69,6 @@ li {
     display: inline;
     vertical-align: middle;
 }
-
 
 /* gamble input */
 #gamble-amount button{
@@ -114,8 +117,19 @@ li {
     width: 100%;
 }
 
-#table {
-    height: 30vh;
+.value-display{
+    float: right;
+    margin-right: 2%;
+    padding: 0.2% 1%;
+}
+
+#dealer-value-div{
+    top: 0;
+}
+
+#player-value-div{
+    bottom: 0;
+    margin-left: 0;
 }
 
 /* button stylings */
@@ -131,7 +145,7 @@ button:hover {
 
 /* game buttons */
 #game-buttons-div {
-    margin: 2% auto;
+    margin: 1.35% auto;
     width: 35%;
     visibility: hidden;
 }
