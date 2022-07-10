@@ -8,10 +8,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="button-div">
-        <button id="stay">Stay</button>
-        <button id="hit">Hit!</button>
-        <button id="double-down">Double down!</button>
+    <div id="welcome" class="centre-message">
+        <h1>Welcome to the digital blackjack table!</h1>
+        <h2>You can't gamble real money, but have 10,000 virtual chips, complements of the house.</h2>
+        <h2>Enjoy! &#128526;</h2>
+        <button onclick="divDisappear('welcome'); divAppear('gamble-amount');" class="centre-message-button">Play Blackjack</button>
+    </div>
+
+    <div id="gamble-amount" class="centre-message">
+        <h2>How many chips do you want to bet?</h2>
+        <form>
+            <label for="bet">Chips:</label>
+            <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
+            <button type="submit" onclick="">Bet!</button>
+        </form>
+    </div>
+
+    <div>
+    <p>Chips: <span id="chips"></span></p>
+    </div>
+    <div id="game-buttons-div">
+        <button id="stay" class="game-button">Stay</button>
+        <button id="hit" class="game-button">Hit!</button>
+        <button id="double-down" class="game-button">Double down!</button>
     </div>
 
     <footer>

@@ -1,4 +1,4 @@
-// class for defining card objects
+// Class definition for card objects
 class card {
     constructor(suit, value) {
         switch (value) {
@@ -34,7 +34,7 @@ class card {
     }
 };
 
-// Class definition for deck objects
+// Class definition for deck objects, which hold card objects
 class deck{
     constructor(suits){
         this.cards = [];
@@ -54,7 +54,7 @@ class deck{
     }
 }
 
-// Class definition for hand object
+// Class definition for hand object, which hold card objects and game functions
 class hand{
     constructor(player){
         this.cards = [];
@@ -76,7 +76,7 @@ class hand{
         this.sumUp = function() {
             let sum = 0;
             
-            for(let i in this.cards){
+            for(let i of this.cards){
                 if(i.id === "ace"){
                     sum += i.value(sum);
                 }
@@ -91,9 +91,15 @@ class hand{
     }
 }
 
-// function sumUpHand(hand){
+function divDisappear(id) {
+    document.getElementById(id).style.visibility = "hidden";
+}
 
-// }
+function divAppear(id) {
+    document.getElementById(id).style.visibility = "visible";
+}
+
+let playerChips = 10000;
 
 let suits = ["clubs","diamonds","hearts","spades"]
 
@@ -105,7 +111,6 @@ cardDeck.shuffle();
 let playerHand = new hand("player");
 let dealerHand = new hand("dealer");
 
-playerHand.playCard(cardDeck);
-playerHand.playCard(cardDeck);
+let chips = document.getElementById("chips");
 
-playerHand.discard(discardDeck);
+chips.innerHTML = playerChips;

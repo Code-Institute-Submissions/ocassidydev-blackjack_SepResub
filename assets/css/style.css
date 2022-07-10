@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&family=Roboto:wght@500&display=swap');
 
+/* general */
 * {
     margin: 0;
     border: none;
@@ -19,18 +20,81 @@ li {
     text-align: center;
 }
 
-button {
-    height: 4rem;
+/* messages that only appear at set points */
+.centre-message{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1%;
+    background-color: white;
+    border: 10px solid red;
+    text-align: center;
+}
+
+.centre-message h1, .centre-message h2{
+    margin: 5% 0;
+}
+
+.centre-message-button{
+    width: 50%;
+    height: 3rem;
+    font-size: 150%;
+    margin: 0 0 5% 0;
+}
+
+/* gamble input */
+#gamble-amount{
+    visibility: hidden;
+}
+
+#gamble-amount button{
     width: 20%;
-    margin: 0 auto;
+    margin: 5% 0 5% 5%;
+    vertical-align: bottom;
+    font-size: 75%;    
+}
+
+#gamble-amount label{
+    margin: 5% 1% 5% 0;
+    line-height:normal;
+    vertical-align: bottom;
+    padding: 1% 2%;;
+}
+
+#gamble-amount input{
+    vertical-align: bottom;
+    height: 22px;
+    padding: 1% 2%;
+    margin: 5% 0;
+    border: 2px solid black;
+}
+
+#gamble-amount form{
+    font-size: 150%;
+}
+
+/* button stylings */
+button {
     padding: 1% 2%;
     background-color: beige;
     border: 2px solid black;
 }
 
-#button-div {
-    margin: 5% 40%;
+button:hover {
+    background-color: rgb(206, 206, 180);;
+}
+
+/* game buttons */
+#game-buttons-div {
+    margin: 2% auto;
+    width: 30%;
+}
+
+.game-button {
+    height: 4rem;
     width: 20%;
+    font-size: 120%;
 }
 
 #stay {
@@ -45,6 +109,7 @@ button {
     float: right;
 }
 
+/* footer */
 footer {
     height: 10rem;
     background-color: #2C372E;
