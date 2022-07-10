@@ -46,21 +46,22 @@ li {
 }
 
 /* chips div */
-#chips-div{
+.chips-display{
     padding: 1%;
     background-color: white;
     border: 10px solid #0F2925;
+    margin: 0 0.5%;
     display: inline-block;
 }
 
-#chips-div img{
+.chips-display img{
     height: 100%;
     display: inline;
     vertical-align: middle;
     height: 50px;
 }
 
-#chips-div h2 {
+.chips-display h2{
     display: inline;
     vertical-align: middle;
 }
@@ -90,7 +91,7 @@ li {
     font-size: 120%;
 }
 
-#gamble-amount form{
+#form{
     font-size: 150%;
     margin: 10% 0;
 }
@@ -132,6 +133,7 @@ button:hover {
 #game-buttons-div {
     margin: 2% auto;
     width: 35%;
+    visibility: hidden;
 }
 
 .game-button {

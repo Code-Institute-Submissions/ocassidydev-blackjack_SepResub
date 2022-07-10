@@ -68,7 +68,7 @@ class hand{
                 deck.shuffle();
             }
             
-            console.log(`${this.handOwner} got the ${deck.cards[0].id} of ${deck.cards[0].suit}!`);
+            // This code block displays each card that was played, starting from the middle position
             let i = this.nextCardSpot[0];
             let imgName = `${deck.cards[0].id}${deck.cards[0].suit}`;
 
@@ -112,77 +112,108 @@ class hand{
     }
 }
 
-function giveChips(playerChips) {
-    document.getElementById("chips").innerHTML = playerChips;
+// function to update chip display
+function updateChips(value) {
+    let chipSpan = document.getElementById("chips").innerHTML;
+    let curChips = parseInt(chipSpan);
+    let newChips = curChips + value;
+    chipSpan = newChips; 
+}
+
+// function to update bet display
+function updateBet(value) {
+    let betSpan = document.getElementById("bet-chips").innerHTML;
+    let curBet = parseInt(betSpan);
+    let newBet = curBet + value;
+    betSpan = newBet;
 }
 
 // function to begin the round
 function startRound(hand, deck, discard){
-    bet = document.getElementById("bet").value;
-
     for(let i=0; i<2; i++){
         hand.playCard(deck, discard);
     }
-
     if(hand.sumUp() == 21) {
-        blackjack(bet);
+        endMessage(0);
     }
     else{
-        let stayButton = document.getElementById("stay");
-        let hitButton = document.getElementById("hit");
-        let doubleDownButton = document.getElementById("double-down");
-
-        let returnValue;
-
-        returnValue = stayButton.addEventListener("click", stay);
-        returnValue = hitButton.addEventListener("click", hit);
-        returnValue = doubleDownButton.addEventListener("click", doubleDown);
-
-        switch(returnValue) {
-            case 1:
-                console.log("stay");
-                break;
-            case 2:
-                console.log("hit");
-                break;
-            case 3:
-                console.log("double down");
-                break;
-            default:
-                console.log("doesn't work...");
-        }
+        divAppear('game-buttons-div');
     }
 }
 
-// function for stay
-function stay() {
-    return 1;
+function roundContinue(playerHand, dealerHand, deck, discard, choice){
+    switch(choice) {
+        case 1:
+            dealerPlay(dealerHand, deck, discard, playerHand.sumUp());
+            break;
+        case 2:
+            console.log("hit");
+            break;
+        case 3:
+            console.log("double down");
+            break;
+        default:
+            alert("Error: Invalid player control");
+    }
 }
 
-function hit() {
-    return 2;
+function dealerPlay(hand, deck, discard, beatVal){
+    while(hand.sumUp <= beatVal || (hand.sumUp < 17 && hand.sumUp != beatVal)){
+        hand.playCard(deck, discard);
+    }
+
+    if(hand.sumUp > 21){
+        endMessage(1);
+    }
+    else if(hand.sumUp <= 21 && hand.sumUp > beatVal){
+        endMessage(2);
+    }
+    else if(hand.sumUp <= 21 && hand.sumUp === beatVal){
+        endMessage(3);
+    }
+    else{
+        alert("Error when playing dealer hand");
+    }
 }
 
-function doubleDown() {
-    return 3;
+// function to display endgame message
+function endMessage(returnValue){
+    let endDiv = document.getElementById("end-message").children;
+    let bet = parseInt(document.getElementById("bet-chips").innerHTML);
+
+    switch(returnValue){
+        case 0:
+            endDiv[0].innerHTML = "Blackjack!";
+            endDiv[1].innerHTML = `You won ${bet} chips!`;
+            updateChips(bet);
+            updateBet(0);
+            break;
+        case 1:
+            endDiv[0].innerHTML = "You win!";
+            endDiv[1].innerHTML = `You won ${bet} chips!`;
+            updateChips(bet);
+            updateBet(0);
+            break;
+        case 2:
+            endDiv[0].innerHTML = "You lose!";
+            endDiv[1].innerHTML = `You lost ${bet} chips...`
+            updateChips(-bet);
+            updateBet(0);
+            break;
+        case 3:
+            endDiv[0].innerHTML = "Tie!";
+            endDiv[1].innerHTML = `${bet} chips will be added to the next rounds bet`
+            break;
+        default:
+            alert("Error: invalid return value for end of round");
+    }
+
+    divAppear("end-message");
 }
 
-function blackjack(bet){
-    let winning = document.getElementById("blackjack-bet-val");
-    winning.innerHTML = bet;
-    divAppear("blackjack");
-}
-
-function win(bet){
-    let winning = document.getElementById("win-bet-val");
-    winning.innerHTML = bet;
-    divAppear("win");
-}
-
-function lose(bet){
-    let losing = document.getElementById("lose-bet-val");
-    losing.innerHTML = bet;
-    divAppear("lose");
+function discard(playerHand, dealerHand, discardDeck) {
+    playerHand.discard(discardDeck);
+    dealerHand.discard(discardDeck);
 }
 
 function divDisappear(id) {

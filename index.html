@@ -13,44 +13,34 @@
         <h1>Welcome to the digital blackjack table!</h1>
         <h2>You can't gamble real money, but have 1,000 virtual chips, complements of the house.</h2>
         <h2>Enjoy! &#128526;</h2>
-        <button onclick="divDisappear('welcome'); divAppear('gamble-amount'); giveChips(1000);" class="centre-message-button">Play Blackjack</button>
+        <button onclick="divDisappear('welcome'); divAppear('gamble-amount'); updateChips(1000);" class="centre-message-button">Play Blackjack</button>
     </div>
 
     <!-- bet prompt -->
     <div id="gamble-amount" class="centre-message">
         <h2>How many chips do you want to bet?</h2>
-        <form>
+        <div id="form">
             <label for="bet">Chips:</label>
             <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
-            <button type="submit" onclick="divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);">Bet!</button>
-        </form>
+            <button onclick="updateBet(); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck, NaN);">Bet!</button>
+        </div>
     </div>
 
-    <!-- blackjack message -->
-    <div id="blackjack" class="centre-message">
-        <h1>Blackjack!</h1>
-        <h2>You win <span id="blackjack-bet-val"></span> chips!</h2>
-        <button onclick="discard(); divDisappear('blackjack'); divAppear('gamble-amount');">Play again</button>
-    </div>
-
-    <!-- win message -->
-    <div id="win" class="centre-message">
-        <h1>You won!</h1>
-        <h2>You win <span id="win-bet-val"></span> chips!</h2>
-        <button onclick="discard(); divDisappear('win'); divAppear('gamble-amount');">Play again</button>
-    </div>
-
-    <!-- lose message -->
-    <div id="lose" class="centre-message">
-        <h1>You lose!</h1>
-        <h2>You lose <span id="lose-bet-val"></span> chips...</h2>
-        <button onclick="discard(); divDisappear('lose'); divAppear('gamble-amount');">Play again</button>
+    <!-- end round message -->
+    <div id="end-message" class="centre-message">
+        <h1></h1>
+        <h2></h2>
+        <button onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('blackjack'); divAppear('gamble-amount');">Play again</button>
     </div>
 
     <!-- div for displaying how many chips the player has -->
-    <div id="chips-div">
+    <div id="chips-div" class="chips-display">
     <img src="assets/images/chips-icon.webp" alt="Casino chips">
-    <h2>= <span id="chips"> 0</span></h2>
+    <h2><span id="chips"> 0</span></h2>
+    </div>
+    <div id="bet-div" class="chips-display">
+        <img src="assets/images/bet-icon.webp" alt="Bet amount">
+        <h2><span id="bet-chips"> 0</span></h2>
     </div>
 
     <div id="dealer-hand" class="hand">
@@ -78,9 +68,9 @@
     </div>
 
     <div id="game-buttons-div">
-        <button id="stay" class="game-button">Stay</button>
-        <button id="hit" class="game-button">Hit!</button>
-        <button id="double-down" class="game-button">Double down!</button>
+        <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stay</button>
+        <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
+        <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
     </div>
 
     <footer>
