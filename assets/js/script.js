@@ -1,5 +1,5 @@
 /**
- * 
+ * Cards objects have name, in-game value and suit
  */
 class Card {
     constructor(suit, value) {
@@ -36,7 +36,9 @@ class Card {
     }
 };
 
-// Class definition for deck objects, which hold card objects
+/**
+ * Decks hold card objects
+ */
 class Deck{
     constructor(suits){
         this.cards = [];
@@ -49,20 +51,28 @@ class Deck{
             }
         }
 
-        // function for randomly sorting the array of cards
+        /**
+         * randomly sorts the array of cards
+         */
         this.shuffle = function() {
             this.cards.sort(() => Math.random() - 0.5);
         }
     }
 }
 
-// Class definition for hand object, which hold card objects and game functions
+/**
+ * Hands hold cards in play and various methods for the game
+ */
 class Hand{
     constructor(player){
         this.cards = [];
         this.handOwner = player;
         this.nextCardSpot = [4,-1,1]
-        // function that plays a card from the deck to the hand
+        /**
+         * plays a card from the deck to the hand
+         * @param {Deck} deck 
+         * @param {Deck} discard 
+         */
         this.playCard = function(deck, discard) {
             if(deck.cards.length == 0){
                 deck.cards = discard.cards;
@@ -71,11 +81,11 @@ class Hand{
             }
             
             // This code block displays each card that was played, starting from the middle position
-            let i = this.nextCardSpot[0];
-            let imgName = `${deck.cards[0].id}${deck.cards[0].suit}`;
+            const i = this.nextCardSpot[0];
+            const imgName = `${deck.cards[0].id}${deck.cards[0].suit}`;
 
-            let cardSpots = document.getElementById(this.handOwner+"-hand").children;
-            let image = cardSpots[i].children[0];
+            const cardSpots = document.getElementById(this.handOwner+"-hand").children;
+            const image = cardSpots[i].children[0];
 
             image.setAttribute("src", "assets/images/"+imgName+".png");
             cardSpots[i].style.paddingTop = 0;
@@ -87,15 +97,19 @@ class Hand{
 
             this.cards.push(deck.cards.shift());
         }
-        // function that clear the cards from the hand
+        /**
+         * clear the cards from the hand, both in memory and in UI
+         * @param {Deck} discardDeck 
+         */
         this.discard = function(discardDeck) {
             const iter = this.cards.length;
-            let cardSpots = document.getElementById(this.handOwner+"-hand").children;
+            const cardSpots = document.getElementById(this.handOwner+"-hand").children;
             let i;
+            let image;
 
             for(let j = iter; j>=0; j--){
                 i = this.nextCardSpot[0];
-                let image = cardSpots[i].children[0];
+                image = cardSpots[i].children[0];
 
                 image.setAttribute("src", "");
                 cardSpots[i].style.paddingTop = "14%";
@@ -133,28 +147,47 @@ class Hand{
  * @param {int} value 
  */
 function updateChips(value) {
-    let chipSpan = document.getElementById("chips");
-    let curChips = parseInt(chipSpan.innerHTML);
-    let newChips = curChips + value;
+    const chipSpan = document.getElementById("chips");
+    const curChips = parseInt(chipSpan.innerHTML);
+    const newChips = curChips + value;
+
     chipSpan.innerHTML = newChips; 
+
+    if(newChips < 200){
+        document.getElementById("bet").setAttribute("max", newChips.toString());
+    }
+    else if(newChips == 0){
+        const endDiv = document.getElementById("end-message").children;
+        endDiv[0].innerHTML = "Out of chips!";
+        endDiv[1].innerHTML = "You gambled away every chip you had. However, as we're feeling nice, have another 1000!"
+    }
 }
 
-// function to update bet display
+/**
+ * update bet display
+ */
 function updateBet() {
-    let betSpan = document.getElementById("bet-chips");
+    const betSpan = document.getElementById("bet-chips");
     let curBet = parseInt(betSpan.innerHTML);
     let newBet = curBet + parseInt(document.getElementById("bet").value)
     
     betSpan.innerHTML = newBet;
 }
 
-// function that resets bet
+/**
+ * resets bet
+ */
 function resetBet(){
     let betSpan = document.getElementById("bet-chips");
     betSpan.innerHTML = 0;
 }
 
-// function to begin the round
+/**
+ * begin the round
+ * @param {Hand} hand 
+ * @param {Deck} deck 
+ * @param {Discard} discard 
+ */
 function startRound(hand, deck, discard){
     for(let i=0; i<2; i++){
         hand.playCard(deck, discard);
@@ -247,8 +280,8 @@ function dealerPlay(hand, deck, discard, beatVal){
 function endMessage(returnValue){
     divDisappear("game-buttons-div");
 
-    let endDiv = document.getElementById("end-message").children;
-    let bet = parseInt(document.getElementById("bet-chips").innerHTML);
+    const endDiv = document.getElementById("end-message").children;
+    const bet = parseInt(document.getElementById("bet-chips").innerHTML);
 
     switch(returnValue){
         case 0:
@@ -280,27 +313,41 @@ function endMessage(returnValue){
     divAppear("end-message");
 }
 
+/**
+ * moves cards in player and dealer hands to discard
+ * @param {Hand} playerHand 
+ * @param {Hand} dealerHand 
+ * @param {Deck} discardDeck 
+ */
 function discard(playerHand, dealerHand, discardDeck) {
     playerHand.discard(discardDeck);
     dealerHand.discard(discardDeck);
 }
 
+/**
+ * hides element of id
+ * @param {string} id 
+ */
 function divDisappear(id) {
     document.getElementById(id).style.visibility = "hidden";
 }
 
+/**
+ * shows element of id
+ * @param {string} id 
+ */
 function divAppear(id) {
     document.getElementById(id).style.visibility = "visible";
 }
 
 window.onload = divAppear("welcome");
 
-let suits = ["clubs","diamonds","hearts","spades"];
+const suits = ["clubs","diamonds","hearts","spades"];
 
 const cardDeck = new Deck(suits);
-let discardDeck = new Deck([]);
+const discardDeck = new Deck([]);
 
 cardDeck.shuffle();
 
-let playerHand = new Hand("player");
-let dealerHand = new Hand("dealer");
+const playerHand = new Hand("player");
+const dealerHand = new Hand("dealer");
