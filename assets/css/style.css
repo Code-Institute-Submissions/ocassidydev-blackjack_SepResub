@@ -31,6 +31,7 @@ li {
     border: 10px solid red;
     border-radius: 2%;
     text-align: center;
+    visibility: hidden;
 }
 
 .centre-message h1, .centre-message h2{
@@ -66,10 +67,6 @@ li {
 
 
 /* gamble input */
-#gamble-amount{
-    visibility: hidden;
-}
-
 #gamble-amount button{
     width: 20%;
     margin: 0 0 0 10px;

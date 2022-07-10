@@ -26,6 +26,27 @@
         </form>
     </div>
 
+    <!-- blackjack message -->
+    <div id="blackjack" class="centre-message">
+        <h1>Blackjack!</h1>
+        <h2>You win <span id="bet-val"></span> chips!</h2>
+        <button onclick="discard(); divDisappear('blackjack'); divAppear('gamble-amount');"></button>
+    </div>
+
+    <!-- win message -->
+    <div id="win" class="centre-message">
+        <h1>You won!</h1>
+        <h2>You win <span id="bet-val"></span> chips!</h2>
+        <button onclick="discard(); divDisappear('win'); divAppear('gamble-amount');"></button>
+    </div>
+
+    <!-- lose message -->
+    <div id="lose" class="centre-message">
+        <h1>You lose!</h1>
+        <h2>You lose <span id="bet-val"></span> chips...</h2>
+        <button onclick="discard(); divDisappear('lose'); divAppear('gamble-amount');"></button>
+    </div>
+
     <!-- div for displaying how many chips the player has -->
     <div id="chips-div">
     <img src="assets/images/chips-icon.webp" alt="Casino chips">

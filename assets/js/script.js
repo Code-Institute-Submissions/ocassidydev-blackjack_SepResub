@@ -123,7 +123,16 @@ function startRound(hand, deck){
         hand.playCard(deck);
     }
 
-    hand.sumUp();
+    if(hand.sumUp() == 21) {
+        blackjack();
+    }
+    else{
+        callback();
+    }
+}
+
+function blackjack(){
+    divAppear("blackjack");
 }
 
 function divDisappear(id) {
@@ -134,7 +143,9 @@ function divAppear(id) {
     document.getElementById(id).style.visibility = "visible";
 }
 
-let suits = ["clubs","diamonds","hearts","spades"]
+window.onload = divAppear("welcome");
+
+let suits = ["clubs","diamonds","hearts","spades"];
 
 let cardDeck = new deck(suits);
 let discardDeck = new deck([]);
