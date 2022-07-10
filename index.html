@@ -8,24 +8,28 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- welcome message -->
     <div id="welcome" class="centre-message">
         <h1>Welcome to the digital blackjack table!</h1>
-        <h2>You can't gamble real money, but have 10,000 virtual chips, complements of the house.</h2>
+        <h2>You can't gamble real money, but have 1,000 virtual chips, complements of the house.</h2>
         <h2>Enjoy! &#128526;</h2>
-        <button onclick="divDisappear('welcome'); divAppear('gamble-amount');" class="centre-message-button">Play Blackjack</button>
+        <button onclick="divDisappear('welcome'); divAppear('gamble-amount'); giveChips(1000);" class="centre-message-button">Play Blackjack</button>
     </div>
 
+    <!-- bet prompt -->
     <div id="gamble-amount" class="centre-message">
         <h2>How many chips do you want to bet?</h2>
         <form>
             <label for="bet">Chips:</label>
             <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
-            <button type="submit" onclick="">Bet!</button>
+            <button type="submit" onclick="divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);">Bet!</button>
         </form>
     </div>
 
-    <div>
-    <p>Chips: <span id="chips"></span></p>
+    <!-- div for displaying how many chips the player has -->
+    <div id="chips-div">
+    <img src="assets/images/chips-icon.webp" alt="Casino chips">
+    <h2>= <span id="chips"> 0</span></h2>
     </div>
     <div id="game-buttons-div">
         <button id="stay" class="game-button">Stay</button>

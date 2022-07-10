@@ -91,6 +91,20 @@ class hand{
     }
 }
 
+function giveChips(playerChips) {
+    document.getElementById("chips").innerHTML = playerChips;
+}
+
+function startRound(hand, deck){
+    bet = document.getElementById("bet").value;
+
+    for(let i=0; i<2; i++){
+        hand.playCard(deck);
+    }
+
+    hand.sumUp();
+}
+
 function divDisappear(id) {
     document.getElementById(id).style.visibility = "hidden";
 }
@@ -98,8 +112,6 @@ function divDisappear(id) {
 function divAppear(id) {
     document.getElementById(id).style.visibility = "visible";
 }
-
-let playerChips = 10000;
 
 let suits = ["clubs","diamonds","hearts","spades"]
 
@@ -110,7 +122,3 @@ cardDeck.shuffle();
 
 let playerHand = new hand("player");
 let dealerHand = new hand("dealer");
-
-let chips = document.getElementById("chips");
-
-chips.innerHTML = playerChips;

@@ -26,9 +26,10 @@ li {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 1%;
+    padding: 2%;
     background-color: white;
     border: 10px solid red;
+    border-radius: 2%;
     text-align: center;
 }
 
@@ -43,6 +44,27 @@ li {
     margin: 0 0 5% 0;
 }
 
+/* chips div */
+#chips-div{
+    padding: 1%;
+    background-color: white;
+    border: 10px solid #0F2925;
+    display: inline-block;
+}
+
+#chips-div img{
+    height: 100%;
+    display: inline;
+    vertical-align: middle;
+    height: 50px;
+}
+
+#chips-div h2 {
+    display: inline;
+    vertical-align: middle;
+}
+
+
 /* gamble input */
 #gamble-amount{
     visibility: hidden;
@@ -50,28 +72,30 @@ li {
 
 #gamble-amount button{
     width: 20%;
-    margin: 5% 0 5% 5%;
-    vertical-align: bottom;
+    margin: 0 0 0 10px;
+    vertical-align: top;
     font-size: 75%;    
 }
 
 #gamble-amount label{
-    margin: 5% 1% 5% 0;
+    margin-right: 5px;
     line-height:normal;
     vertical-align: bottom;
-    padding: 1% 2%;;
 }
 
 #gamble-amount input{
-    vertical-align: bottom;
+    vertical-align: top;
     height: 22px;
+    width: 15%;
     padding: 1% 2%;
-    margin: 5% 0;
     border: 2px solid black;
+    text-align: center;
+    font-size: 120%;
 }
 
 #gamble-amount form{
     font-size: 150%;
+    margin: 10% 0;
 }
 
 /* button stylings */
@@ -88,7 +112,7 @@ button:hover {
 /* game buttons */
 #game-buttons-div {
     margin: 2% auto;
-    width: 30%;
+    width: 35%;
 }
 
 .game-button {
