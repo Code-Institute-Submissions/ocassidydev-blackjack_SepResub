@@ -158,19 +158,39 @@ function startRound(hand, deck, discard){
     }
     else{
         divAppear('game-buttons-div');
+        divAppear("double-down");
     }
 }
 
 function roundContinue(playerHand, dealerHand, deck, discard, choice){
     switch(choice) {
         case 1:
+            divDisappear("double-down");
             dealerPlay(dealerHand, deck, discard, playerHand.sumUp());
             break;
         case 2:
-            console.log("hit");
+            divDisappear("double-down");
+            playerHand.playCard(deck, discard);
+            if(playerHand.sumUp()===21){
+                endMessage(0);
+            }
+            else if(playerHand.sumUp()>21){
+                endMessage(2);
+            }
             break;
         case 3:
-            console.log("double down");
+            let betSpan = getElementById("bet-chips");
+            betSpan.innerHTML = parseInt(betSpan.innerHTML)*2;
+            playerHand.playCard(deck, discard);
+            if(playerHand.sumUp()===21){
+                endMessage(0);
+            }
+            else if(playerHand.sumUp()>21){
+                endMessage(2);
+            }
+            else{
+                dealerPlay(dealerHand, deck, discard, playerHand.sumUp());
+            }
             break;
         default:
             alert("Error: Invalid player control");
@@ -178,7 +198,9 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
 }
 
 function dealerPlay(hand, deck, discard, beatVal){
-    while(hand.sumUp() <= beatVal || (hand.sumUp() < 17 && hand.sumUp != beatVal)){
+    divDisappear("game-buttons-div");
+
+    while(hand.sumUp() <= beatVal && (hand.sumUp() < 17 || hand.sumUp() != beatVal)){
         hand.playCard(deck, discard);
     }
 
@@ -198,6 +220,8 @@ function dealerPlay(hand, deck, discard, beatVal){
 
 // function to display endgame message
 function endMessage(returnValue){
+    divDisappear("game-buttons-div");
+
     let endDiv = document.getElementById("end-message").children;
     let bet = parseInt(document.getElementById("bet-chips").innerHTML);
 
