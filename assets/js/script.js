@@ -116,23 +116,73 @@ function giveChips(playerChips) {
     document.getElementById("chips").innerHTML = playerChips;
 }
 
-function startRound(hand, deck){
+// function to begin the round
+function startRound(hand, deck, discard){
     bet = document.getElementById("bet").value;
 
     for(let i=0; i<2; i++){
-        hand.playCard(deck);
+        hand.playCard(deck, discard);
     }
 
     if(hand.sumUp() == 21) {
-        blackjack();
+        blackjack(bet);
     }
     else{
-        callback();
+        let stayButton = document.getElementById("stay");
+        let hitButton = document.getElementById("hit");
+        let doubleDownButton = document.getElementById("double-down");
+
+        let returnValue;
+
+        returnValue = stayButton.addEventListener("click", stay);
+        returnValue = hitButton.addEventListener("click", hit);
+        returnValue = doubleDownButton.addEventListener("click", doubleDown);
+
+        switch(returnValue) {
+            case 1:
+                console.log("stay");
+                break;
+            case 2:
+                console.log("hit");
+                break;
+            case 3:
+                console.log("double down");
+                break;
+            default:
+                console.log("doesn't work...");
+        }
     }
 }
 
-function blackjack(){
+// function for stay
+function stay() {
+    return 1;
+}
+
+function hit() {
+    return 2;
+}
+
+function doubleDown() {
+    return 3;
+}
+
+function blackjack(bet){
+    let winning = document.getElementById("blackjack-bet-val");
+    winning.innerHTML = bet;
     divAppear("blackjack");
+}
+
+function win(bet){
+    let winning = document.getElementById("win-bet-val");
+    winning.innerHTML = bet;
+    divAppear("win");
+}
+
+function lose(bet){
+    let losing = document.getElementById("lose-bet-val");
+    losing.innerHTML = bet;
+    divAppear("lose");
 }
 
 function divDisappear(id) {

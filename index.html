@@ -29,22 +29,22 @@
     <!-- blackjack message -->
     <div id="blackjack" class="centre-message">
         <h1>Blackjack!</h1>
-        <h2>You win <span id="bet-val"></span> chips!</h2>
-        <button onclick="discard(); divDisappear('blackjack'); divAppear('gamble-amount');"></button>
+        <h2>You win <span id="blackjack-bet-val"></span> chips!</h2>
+        <button onclick="discard(); divDisappear('blackjack'); divAppear('gamble-amount');">Play again</button>
     </div>
 
     <!-- win message -->
     <div id="win" class="centre-message">
         <h1>You won!</h1>
-        <h2>You win <span id="bet-val"></span> chips!</h2>
-        <button onclick="discard(); divDisappear('win'); divAppear('gamble-amount');"></button>
+        <h2>You win <span id="win-bet-val"></span> chips!</h2>
+        <button onclick="discard(); divDisappear('win'); divAppear('gamble-amount');">Play again</button>
     </div>
 
     <!-- lose message -->
     <div id="lose" class="centre-message">
         <h1>You lose!</h1>
-        <h2>You lose <span id="bet-val"></span> chips...</h2>
-        <button onclick="discard(); divDisappear('lose'); divAppear('gamble-amount');"></button>
+        <h2>You lose <span id="lose-bet-val"></span> chips...</h2>
+        <button onclick="discard(); divDisappear('lose'); divAppear('gamble-amount');">Play again</button>
     </div>
 
     <!-- div for displaying how many chips the player has -->
@@ -79,7 +79,7 @@
 
     <div id="game-buttons-div">
         <button id="stay" class="game-button">Stay</button>
-        <button id="hit" class="game-button" onclick="playerHand.playCard(cardDeck,discardDeck);">Hit!</button>
+        <button id="hit" class="game-button">Hit!</button>
         <button id="double-down" class="game-button">Double down!</button>
     </div>
 
