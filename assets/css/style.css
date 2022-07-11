@@ -439,9 +439,15 @@ footer p {
     }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 300px) {
     .card-div {
-        width: 9.5%;
+        width: 9.4%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .card-div {
+        width: 9.2%;
     }
 }
 
