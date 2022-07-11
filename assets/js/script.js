@@ -143,28 +143,20 @@ class Hand{
             
             for(let i of this.cards){
                 if(i.id === "ace"){
-                    sum += i.value(this.aceSum());
+                    continue;
                 }
                 else{
                     sum += i.value;
+                }
+            }
+
+            for(let i of this.cards){
+                if(i.id === "ace"){
+                    sum += i.value(sum);
                 }
             }
 
             document.getElementById(this.handOwner+"-value").innerHTML = sum;
-            return sum;
-        }
-        this.aceSum = function() {
-            let sum = 0;
-            
-            for(let i of this.cards){
-                if(i.id === "ace"){
-                    sum += 0;
-                }
-                else{
-                    sum += i.value;
-                }
-            }
-
             return sum;
         }
     }
