@@ -169,12 +169,11 @@ Throughout the project, the appearance of the website was checked using firefox 
 - HTML
   - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Focassidydev.github.io%2Fnanonow%2Findex.html), with exception to one warning regarding the use of a label in an anchor tag (which was necessary for it to work as intended)
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Focassidydev.github.io%2Fnanonow%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Focassidydev.github.io%2Fblackjack%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 &nbsp;
 ### Unfixed Bugs
 
-   - On certain small viewports, the card slots show up as taking more space than the page width and one ends up getting displaced below the others, despite this not being the case on other similarily size viewports and in dev tools.
    - Some pages on the site have a lower than desired lighthouse performance score (materials - 88, applications - 78). This is likely due to the quantity of images in the site and a lack of complete optimisation of image formats. This may cause slower loading times.
    
 &nbsp;
@@ -198,65 +197,25 @@ Throughout the project, the appearance of the website was checked using firefox 
 
 ### Code
 
-- The hamburger menu was created with code from a page on [Code-Boxx](https://code-boxx.com/simple-responsive-pure-css-hamburger-menu/).
-- Centering the page titles in the image div was obtained from css code on [hubspot](https://blog.hubspot.com/website/center-div-css)
-- A number of individual queries and fixes were sought on [Stack Overflow](https://stackoverflow.com/).
+- The card Fisher-Yates code block in the deck class's shuffle method was created using an answer from an answer on [Stack Overflow](https://stackoverflow.com/questions/64925666/how-can-i-sort-an-array-randomly-in-javascript).
+- CSS code for centering elements on the page was obtained from this answer on [StackOverflow](https://stackoverflow.com/questions/1776915/how-can-i-center-an-absolutely-positioned-element-in-a-div).
+- Figuring out how to make the logic for handling aces in the game was found using this answer on [StackOverflow](https://stackoverflow.com/questions/13518758/how-to-decide-when-ace-should-count-as-1-or-11-in-blackjack-game)
+- To build the javascript, [Python Tutor](https://pythontutor.com/) was used to visualize the data structures and do some initial debugging.
 - For refreshing certain concepts and documentations, I used [W3S Schools](https://www.w3schools.com/).
 
 &nbsp;
 ### Content 
 
-- Inspiration was taken from [nano.gov](https://www.nano.gov/about-nanotechnology/applications-nanotechnology) and [Wikipedia's Applications of Nanotechnology page](https://en.wikipedia.org/wiki/Applications_of_nanotechnology) to populate the site content.
-- I used various wikipedia pages on the topic to check my knowledge as I was entering content.
+- [Blackjack.org](https://www.blackjack.org/blackjack/how-to-play/) was used to make myself aware of the rules to create a simplified version of the game.
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+- [RedKetchup](https://redketchup.io/image-resizer) was used to resize and crop images to be used.
 
 &nbsp;
 ### Media
 
-The following lists each image by their name in the /assets/images folder, with a link to the site they were taken from. Where possible, they are listed in order of appearance.
+The following lists all groups of assets in the /assets/images folder, with a link to the site they were taken from. Where possible, they are listed in order of appearance.
 
-- __Homepage__
-  - graphene - [SingularityHub](https://singularityhub.com/2018/08/05/beyond-graphene-the-promise-of-2d-materials/)
-  - bodyarmor - [Pinterest](https://www.pinterest.ie/pin/warriors-of-honor--534661786985745203/)
-  - solarpanels - [Wiley Online Library](https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)2567-3165.perovskite-materials)
-  - nostain - [LinkedIn](https://www.linkedin.com/pulse/our-fluid-repellent-stain-resistant-clothing-uniforms-manavalan/?trk=portfolio_article-card_title)
-  - hydrogen - [Fine Art America](https://fineartamerica.com/featured/hydrogen-fuel-cell-concept-car-jim-west.html?product=art-print)
-  
-  - humanheight - [Engineering Stack Exchange](https://engineering.stackexchange.com/questions/21200/what-is-best-sensor-method-to-measure-human-height)
-  - coin - [Etsy](https://www.etsy.com/ie/listing/783952494/coin-1-euro-latvia-2014-latvijas)
-  - pinhead - [Fine Art America](https://fineartamerica.com/featured/pin-head-and-point-dennis-kunkel-microscopyscience-photo-library.html)
-  - hair - [Micropedia](https://microspedia.blogspot.com/2017/09/microscope-view-of-hair.html)
-  - nanoscale - [Dartmouth Undergraduate Journal of Science](https://sites.dartmouth.edu/dujs/2009/02/22/turning-to-nanotechnology-for-pollution-control-applications-of-nanoparticles/)
-
-- __Materials page__
-  - buckies - https://www.chemistryworld.com/news/buckyballs-prove-to-be-a-magnetic-proposition-for-copper/8833.article
-
-  - metalnanoparticle - [Anton Paar](https://www.anton-paar.com/se-en/products/applications/size-and-shape-of-gold-nanoparticles-in-toluene-via-saxs/)
-  - buckyball - [Buckminister Fuller Institute](https://www.bfi.org/about-fuller/big-ideas/buckminsterfullerene/)
-  - liposome - [Skeptical Raptor](https://www.skepticalraptor.com/skepticalraptorblog.php/lipid-nanoparticles-in-covid-19-mrna-vaccines-ican-fails-science/)
-
-  - cntsingle - [The World of Nanoscience](https://worldofnanoscience.weebly.com/nanotube--carbon-fiber-overview.html)
-  - nanowire - [Physics World](https://physicsworld.com/a/nanowire-thickness-alters-gaas-band-structure/)
-  - dna - [The Healthcare Technology Report](https://thehealthcaretechnologyreport.com/environmental-dna-may-have-applications-for-disease-transmission-among-other-uses/)
-
-  - graphenesheet - [AZO Materials](https://www.azom.com/article.aspx?ArticleID=21100)
-  - graphenefootball - [Ossilia](https://www.ossila.com/pages/introduction-2d-materials)
-  - boronnitride - [Ossilia](https://www.ossila.com/products/hexagonal-boron-nitride)
-  - molybdenumdisulfide - [Ossilia](https://www.ossila.com/en-eu/pages/molybdenum-disulfide-mos2)
-
-- __Applications page__
-  - cnt - [Investment Castings](https://www.investment-castings.net/what-are-carbon-nanotubes-and-why-should-you-care/)
-
-  - robot - [Medical Device Network](https://www.medicaldevice-network.com/comment/nanotechnology-medicine-technology/)
-
-  - graphenebattery - [AZO Materials](https://www.azom.com/article.aspx?ArticleID=21103) 
-  - flexbattery - [Phandroid](https://phandroid.com/2012/08/06/this-flexible-battery-could-soon-be-powering-our-flexible-android-devices-video/)
-
-  - skindisplay - [Institute of Electrical and Electronics Engineers](https://spectrum.ieee.org/skin-displays-will-give-wearables-their-independence)
-  - wearable - [The International Society for Optics and Photonics](https://spie.org/news/wearable-photonics?SSO=1)
-  
-  - nanotattoo - [Yael Hanein Lab](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg)
-  - armphone - [Team Trade](https://blog.teamtrade.cz/crumpled-carbon-nanotube-forests-lead-to-wearable-tech/)
-
-- __Contact page__
-  - nanopart - [Bioleagues Worldwide's Twitter](https://twitter.com/bioleagues/status/975606779533869056)
+  - chips-icon - [Iconfinder](https://www.iconfinder.com/icons/1094418/casino_chip_chips_game_poker_poker_chips_stack_icon)
+  - bet-icon - [Iconfinder](https://www.iconfinder.com/icons/508155/bet_betting_coin_hand_pay_place_bet_poker_chip_icon)
+  - hand-icon - [Noun Project](https://thenounproject.com/browse/icons/term/playing-cards/?iconspage=1)
+  - All card assets - [itch.io](https://gamesupply.itch.io/frenchcard)

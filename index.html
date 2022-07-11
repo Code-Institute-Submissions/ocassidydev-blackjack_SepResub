@@ -24,21 +24,20 @@
         <h2>How many chips do you want to bet?</h2>
         <form action="javascript: updateBet(NaN); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);" id="form">
             <label for="bet">Chips:</label>
-            <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
+            <input type="number" id="bet" name="bet" min="10" max="200" step="10" value="10">
             <button type="submit">Bet!</button>
         </form>
     </div>
 
     <!-- end round message -->
     <div id="end-message" class="centre-message">
-        <h1></h1>
-        <h2></h2>
+        <h1> </h1>
+        <h2> </h2>
         <button id="play-again-button" onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');" class="centre-message-button"></button>
     </div>
 
     <!-- main content -->
     <main>
-        <div>
         <!-- div for displaying how many chips the player has -->
         <div id="chips-div" class="num-display">
         <img src="assets/images/chips-icon.webp" alt="Casino chips">
@@ -54,14 +53,14 @@
         </div>
 
         <div id="dealer-hand" class="hand">
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
         </div>
 
         <div id="table">
@@ -71,14 +70,14 @@
         </div>
 
         <div id="player-hand" class="hand">
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
-            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
+            <div class="card-div"><img src=" " alt=""></div>
         </div>
 
         <div id="game-buttons-div">
