@@ -55,7 +55,15 @@ class Deck{
          * randomly sorts the array of cards
          */
         this.shuffle = function() {
-            this.cards.sort(() => Math.random() - 0.5);
+            let j;
+            let k;
+
+            for (let i = this.cards.length-1; i > 0; i--) {
+                j = Math.floor(Math.random() * i);
+                k = this.cards[i];
+                this.cards[i] = this.cards[j];
+                this.cards[j] = k;
+            } 
         }
     }
 }
@@ -118,7 +126,10 @@ class Hand{
                 this.nextCardSpot[0] += (this.nextCardSpot[2]-1) * this.nextCardSpot[1];
                 this.nextCardSpot[1] *= -1;
                 this.nextCardSpot[2] -= 1;
-                discardDeck.cards.push(this.cards.pop())
+                if (j != 0){
+                    discardDeck.cards.push(this.cards.pop())
+                    console.log(discardDeck.cards[discardDeck.cards.length-1]);
+                }
             }
 
             this.nextCardSpot = [4,-1,1];
@@ -149,19 +160,24 @@ class Hand{
 function updateChips(value) {
     const chipSpan = document.getElementById("chips");
     const curChips = parseInt(chipSpan.innerHTML);
-    const newChips = curChips + value;
+    let newChips = curChips + value;
 
     chipSpan.innerHTML = newChips; 
 
     if(newChips < 200){
         document.getElementById("bet").setAttribute("max", newChips.toString());
     }
-    else if(newChips == 0){
+    else{
+        document.getElementById("bet").setAttribute("max", 200);
+    }
+
+    if(newChips === 0){
         const endDiv = document.getElementById("end-message").children;
         endDiv[0].innerHTML = "Out of chips!";
-        endDiv[1].innerHTML = "You gambled away every chip you had. However, as we're feeling nice, have another 1000!"
+        endDiv[1].innerHTML = "You gambled away every chip you had. However, as we're feeling nice, have another 1,000!"
         endDiv[2].innerHTML = "Thanks";
         endDiv[2].setAttribute("onclick", "discard(playerHand, dealerHand, discardDeck); updateChips(1000); divDisappear('end-message'); divAppear('gamble-amount');")
+        document.getElementById("bet").setAttribute("max", 200);
     }
     // Easrter egg if the player gets to 10000
     else if(newChips > 10000){
@@ -229,7 +245,7 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
             divDisappear("double-down");
             playerHand.playCard(deck, discard);
             if(playerHand.sumUp()===21){
-                endMessage(0);
+                endMessage(1);
             }
             else if(playerHand.sumUp()>21){
                 endMessage(2);
@@ -241,7 +257,7 @@ function roundContinue(playerHand, dealerHand, deck, discard, choice){
             betSpan.innerHTML = parseInt(betSpan.innerHTML)*2;
             playerHand.playCard(deck, discard);
             if(playerHand.sumUp()===21){
-                endMessage(0);
+                endMessage(1);
             }
             else if(playerHand.sumUp()>21){
                 endMessage(2);
@@ -291,30 +307,31 @@ function endMessage(returnValue){
     divDisappear("game-buttons-div");
 
     const endDiv = document.getElementById("end-message").children;
-    const bet = parseInt(document.getElementById("bet-chips").innerHTML);
+    let bet = parseInt(document.getElementById("bet-chips").innerHTML);
 
     switch(returnValue){
         case 0:
             endDiv[0].innerHTML = "Blackjack!";
+            bet *= 1.5;
             endDiv[1].innerHTML = `You won ${bet} chips!`;
             updateChips(bet);
             resetBet();
             break;
         case 1:
             endDiv[0].innerHTML = "You win!";
-            endDiv[1].innerHTML = `You won ${bet} chips!`;
+            endDiv[1].innerHTML = `Won ${bet} chips!`;
             updateChips(bet);
             resetBet();
             break;
         case 2:
             endDiv[0].innerHTML = "You lose!";
-            endDiv[1].innerHTML = `You lost ${bet} chips...`
+            endDiv[1].innerHTML = `Lost ${bet} chips...`
             updateChips(-bet);
             resetBet();
             break;
         case 3:
             endDiv[0].innerHTML = "Tie!";
-            endDiv[1].innerHTML = `${bet} chips will be added to the next rounds bet`
+            endDiv[1].innerHTML = `${bet} chips will be added to the next rounds bet.`
             break;
         default:
             alert("Error: invalid return value for end of round");
@@ -358,8 +375,6 @@ const suits = ["clubs","diamonds","hearts","spades"];
 
 const cardDeck = new Deck(suits);
 const discardDeck = new Deck([]);
-
-cardDeck.shuffle();
 
 const playerHand = new Hand("player");
 const dealerHand = new Hand("dealer");

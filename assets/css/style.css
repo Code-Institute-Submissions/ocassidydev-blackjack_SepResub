@@ -54,22 +54,22 @@ li {
 }
 
 /* chips div */
-.chips-display{
+.num-display{
     padding: 0.4% 1%;
     background-color: white;
     border: 10px solid #0F2925;
-    margin: 0 0.5%;
+    margin: 0.5% 0.5%;
     display: inline-block;
 }
 
-.chips-display img{
+.num-display img{
     height: 100%;
     display: inline;
     vertical-align: middle;
     height: 50px;
 }
 
-.chips-display h2{
+.num-display h2{
     display: inline;
     vertical-align: middle;
 }
@@ -112,7 +112,7 @@ li {
     display: inline-block;
     width: 10%;
     padding-top: 14%;
-    margin: 1%;
+    margin: 0.75% 1%;
     border: 3px solid white;
     border-radius: 5%;
 }
@@ -149,7 +149,7 @@ button:hover {
 
 /* game buttons */
 #game-buttons-div {
-    margin: 2% auto;
+    margin: 1% auto;
     width: 35%;
     visibility: hidden;
 }
@@ -198,18 +198,18 @@ footer p {
 /* media queries */
 @media screen and (max-width: 1860px) {
     .card-div{
-        margin: 1% 0.95%;
+        margin: 0.75% 0.95%;
     }
 }
 
 @media screen and (max-width: 1560px) {
     .card-div{
-        margin: 1% 0.9%;
+        margin: 0.75% 0.9%;
     }
 }
 
 @media screen and (max-width: 1340px) {
     .card-div{
-        margin: 1% 0.85%;
+        margin: 0.75% 0.85%;
     }
 }
