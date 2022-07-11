@@ -317,6 +317,7 @@ function endMessage(returnValue){
 
     const endDiv = document.getElementById("end-message").children;
     endDiv[2].innerHTML = "Play again";
+    endDiv[2].setAttribute("onclick", "discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');")
     let bet = parseInt(document.getElementById("bet-chips").innerHTML);
 
     switch(returnValue){
