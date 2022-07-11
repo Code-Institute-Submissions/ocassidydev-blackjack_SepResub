@@ -36,6 +36,7 @@ li {
     border-radius: 2%;
     text-align: center;
     visibility: hidden;
+    z-index: 2;
 }
 
 .centre-message h1, .centre-message h2{
@@ -60,13 +61,13 @@ li {
     border: 10px solid #0F2925;
     margin: 0.5% 0.5%;
     display: inline-block;
+    height: 50px;
 }
 
 .num-display img{
     height: 100%;
     display: inline;
     vertical-align: middle;
-    height: 50px;
 }
 
 .num-display h2{
@@ -105,7 +106,16 @@ li {
 
 /* cards */
 .hand{
-    clear: both;
+    position: absolute;
+    width: 100%;
+}
+
+#dealer-hand{
+    top: 100px;
+}
+
+#player-hand{
+    bottom: 11%;
 }
 
 .card-div{
@@ -132,7 +142,9 @@ li {
 }
 
 #player-value-div{
-    bottom: 0;
+    position: absolute;
+    bottom: 1%;
+    right: 0;
     margin-left: 0;
 }
 
@@ -149,7 +161,10 @@ button:hover {
 
 /* game buttons */
 #game-buttons-div {
-    margin: 1% auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 2%;
     width: 35%;
     visibility: hidden;
 }
@@ -211,5 +226,227 @@ footer p {
 @media screen and (max-width: 1340px) {
     .card-div{
         margin: 0.75% 0.85%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .card-div{
+        margin: 0.75% 0.8%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #game-buttons-div{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #game-buttons-div{
+        width: 45%;
+    }
+
+    .card-div{
+        margin: 0.75% 0.75%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .card-div{
+        margin: 0.75% 0.7%;
+    }
+
+    .game-button{
+        font-size: 100%;
+    }
+
+    #player-hand{
+        bottom: 12%;
+    }
+
+    #gamble-amount input{
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card-div{
+        margin: 0.75% 0.65%;
+    }
+
+    .centre-message-button{
+        width: 70%;
+    }
+
+    #gamble-amount input{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .card-div {
+        margin: 0.75% 0.6%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .game-button{
+        width: 30%;
+    }
+
+    #hit{
+        margin: 0 5%;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .card-div {
+        margin: 0.75% 0.55%;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .card-div {
+        margin: 0.75% 0.5%;
+    }
+
+    #gamble-amount input{
+        width: 30%;
+    }
+
+    .centre-message {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .card-div {
+        margin: 0.75% 0.45%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .card-div {
+        margin: 0.75% 0.4%;
+    }
+
+    .centre-message-button{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 515px) {
+    .card-div {
+        margin: 0.75% 0.35%;
+    }
+
+    #gamble-amount input{
+        font-size: 80%;
+    }
+
+    .num-display{
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .card-div {
+        margin: 0.75% 0.3%;
+    }
+
+    #gamble-amount button {
+        margin-top: 5px;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    .card-div {
+        margin: 0.75% 0.2%;
+    }
+
+    #gamble-amount button {
+        margin-top: 5px;
+        width: 40%;
+    }
+
+    .game-button{
+        width: 33.33%;
+    }
+
+    #hit{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .card-div {
+        margin: 0.75% 0.15%;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .card-div {
+        margin: 0.75% 0.1%;
+    }
+
+    .game-button{
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .card-div {
+        margin: 0.75% 0.05%;
+    }
+
+    .num-display{
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .card-div {
+        margin: 0.75% 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card-div {
+        width: 9.9%;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .card-div {
+        width: 9.8%;
+    }
+
+    .value-display{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .card-div {
+        width: 9.7%;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .card-div {
+        width: 9.6%;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #player-hand{
+        bottom: 15%;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    #player-hand{
+        bottom: 17%;
     }
 }

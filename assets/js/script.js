@@ -75,7 +75,8 @@ class Hand{
     constructor(player){
         this.cards = [];
         this.handOwner = player;
-        this.nextCardSpot = [4,-1,1]
+        this.nextCardSpot = [4,-1,1];
+        this.cardPadding = 0;
         /**
          * plays a card from the deck to the hand
          * @param {Deck} deck 
@@ -127,8 +128,7 @@ class Hand{
                 this.nextCardSpot[1] *= -1;
                 this.nextCardSpot[2] -= 1;
                 if (j != 0){
-                    discardDeck.cards.push(this.cards.pop())
-                    console.log(discardDeck.cards[discardDeck.cards.length-1]);
+                    discardDeck.cards.push(this.cards.pop());
                 }
             }
 
