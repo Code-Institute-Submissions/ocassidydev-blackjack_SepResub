@@ -7,7 +7,7 @@
 ## Features 
 
 ### Existing Features
-- __Navigation Bar__
+- __Central message box__
 
     - Featured on each page as a fully responsive element.
     - Fixed in place at the top of the screen while scrolling so that the user can seemlessly navigate the website regardless of where they are on the page.
@@ -19,7 +19,7 @@
     ![Navigation Bar](assets/readme_images/nav.png)
 
 &nbsp;
-- __Hamburger navigation bar__
+- __Card boxes__
 
     - Under certain screen sizes, the navigation bar on each page disappears and is replaced by a hamburger button
     - This button, coded purely in HTML/CSS, serves as a dropdown menu with all the same navigation links as the naviagtion bar.
@@ -30,7 +30,7 @@
     ![Hamburger Navigation](assets/readme_images/hamnav.PNG)
 
 &nbsp;
-- __Page main image__
+- __Player controls__
 
   - The top of each page includes an artistically rendered image of a nanomaterial and emphasized text which will stand out and interest the user in learning more about the topic.
   - The text will either serve as a tagline for the landing page or contain the page title.
@@ -41,7 +41,7 @@
 ![Main Image](assets/readme_images/page-main-image.png)
 
 &nbsp;
-- __Text boxes__ 
+- __Chip wallet__ 
 
   - This class of div elements is designed to contain text and to be colored.
   - They can be uniformly styled from a single class declaration in the css.
@@ -51,7 +51,7 @@
   ![Textbox](assets/readme_images/textbox.png)
 
 &nbsp;
-- __Figures__
+- __Current bet display__
 
   - This class of image elements is designed to contain images and caption text. 
   - They can also be uniformly styled in the css. 
@@ -61,7 +61,7 @@
   ![Figure](assets/readme_images/figure.png)
 
 &nbsp;
-- __The Footer__ 
+- __Hand value display__ 
 
   - The footer includes icons which serve as social media links to nanonow's various social media pages.
   - Simple font-awesome icons are used to keep this minimalistic.
@@ -71,7 +71,7 @@
   ![Footer](assets/readme_images/footer.PNG)
 
 &nbsp;
-- __About Section__
+- __The Footer__
 
   - The about section introduces the user to the reasons why learning about nanotechnology is useful, along with a simple demonstration to appreciate the size of the nanoscale.
   - Text is displayed in colored and stylistic text boxes, with images displayed in figures beside the textboxes to showcase the different applications of nanotechnology and assist in the scale explanation.
@@ -81,63 +81,11 @@
   ![About](assets/readme_images/about.png)
 
 &nbsp;
-- __Materials Main Section__
-
-  - This page educates the user on the different types of nanomaterials that exist, how they are classified, and their properties. 
-  - Text is displayed in colored and stylistic text boxes, with images of different nanomaterials displayed in figures to supplement them.
-  - This will add value to the user as they will be able to deepen their knowledge on the topic with at an accessible level through a visually appealing webpage.
-  \
-  &nbsp;
-  ![Materials](assets/readme_images/materials.png)
-
-&nbsp;
-- __Applications Main Section__
-
-  - This page gives an overview of some of the applications of 2-D materials to electronics.
-  - It written in such a way as to be as self-contained in information from the other sections as, so an interested user may immediately jump straight to it.
-  - Text is displayed in colored and stylistic text boxes, with images of the different applications displayed in figures beside their respective textboxes.
-  - This will add value to the user as it will excite them about futuristic technology made possible by nanoscience.
-  \
-  &nbsp;
-  ![Applications](assets/readme_images/applications.png)
-
-&nbsp;
-- __Contact Page__
-
-  - This page contains the contact details for nanonow, as well as a newsletter signup form. 
-  - This will add value to the user by providing them detailed information and options of how to find out more.
-  \
-  &nbsp;
-  ![Contact](assets/readme_images/contact.png)
-
-&nbsp;
-
-- __Newsletter Signup Form__
-
-   - This form takes the users email to put them on a mailing list for nanotechnology news.
-   - The form is written in such a way to accomodate a call to action for the user to provide their email address.
-   - This will add value to the user by giving them a means of being regularly updated about this field.
-  \
-  &nbsp;
-  ![Newsletter](assets/readme_images/signup.PNG)
-
-&nbsp;
-
-- __Newsletter Submission Page__
-
-  - The user is navigated to this page on submitting the newsletter.
-  - There is an anchor tag to navigate back to the home page.
-  - This will add value to the user as they will have a clear indication that their email was submitted, along with being informed what to expect next. It also gives a straightforward means for them to navigate back into the site. 
-  \
-  &nbsp;
-  ![Submission](assets/readme_images/thanks.png)
-
-&nbsp;
 ### Features Left to Implement
 
 &nbsp;
 
-***About in nav-bar appearance***
+***Persistent chip wallet***
 
 One feature that I wanted to implement was a means of the about button in the navigation bar to change to the active color when scrolling down past a certain point of the landing page, so it would look like this: 
 
@@ -147,17 +95,20 @@ However as far as I have checked querying how far the user is scrolled down the 
 
 &nbsp;
 
-***News Page***
+***Slowed card dealing***
+
+I also wanted to add a page containing a widget that could scrub social media for mentions of nanotechnology using some kind of API, and then display them as a scrollable element. However this is much too complicated for the current point I am at in the course.
+
+&nbsp;
+
+***Card dealing animations***
 
 I also wanted to add a page containing a widget that could scrub social media for mentions of nanotechnology using some kind of API, and then display them as a scrollable element. However this is much too complicated for the current point I am at in the course.
 
 &nbsp;
 
 ## Testing 
-### Navigation Bars
-\
-&nbsp;
-**Navigation Bar**
+### Central message box
 - The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
 
 |Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
@@ -171,13 +122,11 @@ I also wanted to add a page containing a widget that could scrub social media fo
 \
 &nbsp;
 
-**Hamburger Navigation Bar**
-
-- Similar to the previous section, the below table how each button in the hamburger menu is expected to and actually functions. Each button was validated across each page of the website.
+### Bet input form
+- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
 
 |Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
 |:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|Hamburger          |Drops down vertical navigation bar     |Drops down vertical navigation bar     |✔                     |
 |Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
 |Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
 |Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
@@ -187,11 +136,7 @@ I also wanted to add a page containing a widget that could scrub social media fo
 \
 &nbsp;
 
-### Links
-
-&nbsp;
-
-**Links in Footer page**
+**Links in Footer**
 
 These were checked across each page of the website.
 
@@ -205,34 +150,6 @@ These were checked across each page of the website.
 
 &nbsp;
 
-**Links in Materials page**
-
-|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
-|"There's plenty of room at the bottom" |Opens [wikipedia page](https://en.wikipedia.org/wiki/There%27s_Plenty_of_Room_at_the_Bottom) in new tab|Opens [wikipedia page](https://en.wikipedia.org/wiki/There%27s_Plenty_of_Room_at_the_Bottom) in new tab|✔                     |
-|materials                              |Navigates to materials.html in same tab|Navigates to materials.html in same tab|✔                     |
-
-&nbsp;
-
-**Links in Applications page**
-
-|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
-|Yael Hanein Lab (in Tatoo Electronics) |Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|✔                     |
-|Yael Hanein Lab (in figure caption)    |Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|✔                     |
-
-&nbsp;
-
-**Links in Contact page**
-
-|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
-|info@nanonow.com                       |Opens email prompt in browser          |Opens email prompt in browser          |✔                     |
-
-&nbsp;
 
 ### Newsletter signup form 
 
@@ -354,22 +271,3 @@ The following lists each image by their name in the /assets/images folder, with 
 
 - __Contact page__
   - nanopart - [Bioleagues Worldwide's Twitter](https://twitter.com/bioleagues/status/975606779533869056)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

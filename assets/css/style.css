@@ -413,13 +413,13 @@ footer p {
 
 @media screen and (max-width: 350px) {
     .card-div {
-        width: 9.6%;
+        width: 9.9%;
     }
 }
 
 @media screen and (max-width: 335px) {
     .card-div {
-        width: 9.5%;
+        width: 9.8%;
     }
 
     .value-display{
@@ -429,25 +429,25 @@ footer p {
 
 @media screen and (max-width: 325px) {
     .card-div {
-        width: 9.4%;
+        width: 9.7%;
     }
 }
 
 @media screen and (max-width: 310px) {
     .card-div {
-        width: 9.2%;
+        width: 9.6%;
     }
 }
 
 @media screen and (max-width: 300px) {
     .card-div {
-        width: 9%;
+        width: 9.4%;
     }
 }
 
 @media screen and (max-width: 280px) {
     .card-div {
-        width: 8.8%;
+        width: 9.2%;
     }
 }
 
