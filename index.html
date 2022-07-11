@@ -19,11 +19,11 @@
     <!-- bet prompt -->
     <div id="gamble-amount" class="centre-message">
         <h2>How many chips do you want to bet?</h2>
-        <div id="form">
+        <form action="javascript: updateBet(NaN); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);" id="form">
             <label for="bet">Chips:</label>
             <input type="number" id="bet" name="bet" min="10" max="200" step="10" default="10" value="10">
-            <button onclick="updateBet(NaN); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);">Bet!</button>
-        </div>
+            <button type="submit">Bet!</button>
+        </form>
     </div>
 
     <!-- end round message -->
@@ -33,53 +33,57 @@
         <button id="play-again-button" onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');" class="centre-message-button">Play again</button>
     </div>
 
-    <!-- div for displaying how many chips the player has -->
-    <div id="chips-div" class="chips-display">
-    <img src="assets/images/chips-icon.webp" alt="Casino chips">
-    <h2><span id="chips"> 0</span></h2>
-    </div>
-    <div id="bet-div" class="chips-display">
-        <img src="assets/images/bet-icon.webp" alt="Bet amount">
-        <h2><span id="bet-chips"> 0</span></h2>
-    </div>
-
-    <div id = "dealer-value-div" class="chips-display value-display">
-        <h2><img src="assets/images/hand-icon.png" alt="Value of dealer's hand"><span id="dealer-value">0</span></h2>
-    </div>
-
-    <div id="dealer-hand" class="hand">
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-    </div>
-
-    <div id="table">
-        <div id = "player-value-div" class="chips-display value-display">
-            <h2><img src="assets/images/hand-icon.png" alt="Value of player's hand"><span id="player-value">0</span></h2>
+    <!-- main content -->
+    <main>
+        <div>
+        <!-- div for displaying how many chips the player has -->
+        <div id="chips-div" class="chips-display">
+        <img src="assets/images/chips-icon.webp" alt="Casino chips">
+        <h2><span id="chips"> 0</span></h2>
         </div>
-    </div>
+        <div id="bet-div" class="chips-display">
+            <img src="assets/images/bet-icon.webp" alt="Bet amount">
+            <h2><span id="bet-chips"> 0</span></h2>
+        </div>
 
-    <div id="player-hand" class="hand">
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-        <div class="card-div"><img src="" alt=""></div>
-    </div>
+        <div id = "dealer-value-div" class="chips-display value-display">
+            <h2><img src="assets/images/hand-icon.png" alt="Value of dealer's hand"><span id="dealer-value">0</span></h2>
+        </div>
 
-    <div id="game-buttons-div">
-        <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stay</button>
-        <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
-        <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
-    </div>
+        <div id="dealer-hand" class="hand">
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+        </div>
+
+        <div id="table">
+            <div id = "player-value-div" class="chips-display value-display">
+                <h2><img src="assets/images/hand-icon.png" alt="Value of player's hand"><span id="player-value">0</span></h2>
+            </div>
+        </div>
+
+        <div id="player-hand" class="hand">
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+            <div class="card-div"><img src="" alt=""></div>
+        </div>
+
+        <div id="game-buttons-div">
+            <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stay</button>
+            <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
+            <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
+        </div>
+    </main>
     <footer>
         <ul class="centered">
             <li>

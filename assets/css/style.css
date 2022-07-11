@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+main {
+    height: 100vh;
+}
+
 body {
     background: #33691E;
     font-family: 'Roboto Flex', sans-serif;
@@ -51,7 +55,7 @@ li {
 
 /* chips div */
 .chips-display{
-    padding: 1%;
+    padding: 0.4% 1%;
     background-color: white;
     border: 10px solid #0F2925;
     margin: 0 0.5%;
@@ -145,7 +149,7 @@ button:hover {
 
 /* game buttons */
 #game-buttons-div {
-    margin: 1.35% auto;
+    margin: 2% auto;
     width: 35%;
     visibility: hidden;
 }
