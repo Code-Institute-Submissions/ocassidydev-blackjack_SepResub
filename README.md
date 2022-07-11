@@ -1,8 +1,8 @@
-# NanoNow
+# Blackjack
 
 [Blackjack](https://ocassidydev.github.io/blackjack/) is a simple web app game that allows the player to gamble virtual chips on blackjack, with a script as the dealer. The site will be targeted towards people who are looking to kill some time and have fun. Blackjack will be useful to anyone who would like to practice the basics of card counting to master this classic casino game. 
 
-![Mockup](assets/readme_images/mockup.png)
+![Mockup](assets/readme_images/mockup.PNG)
 &nbsp;
 ## Features 
 
@@ -17,8 +17,8 @@
     - This will be valuable to the user as a means of conveying what is happening in the game, and immersing them in the blackjack experience.
     \
     &nbsp;
-    ![Message box1](assets/readme_images/message-box1.png)
-    ![Message box2](assets/readme_images/message-box2.png)
+    ![Message box1](assets/readme_images/message-box1.PNG)
+    ![Message box2](assets/readme_images/message-box2.PNG)
 
 &nbsp;
 - __Card boxes__
@@ -28,7 +28,7 @@
     - This will be valuable to the user as they give the feeling of a casino table and display the current cards in play.
     \
     &nbsp;
-    ![Card boxes](assets/readme_images/card-boxes.png)
+    ![Card boxes](assets/readme_images/card-boxes.PNG)
 
 &nbsp;
 - __Player controls__
@@ -38,7 +38,7 @@
   - This feature will add value for the user by giving them a means of controlling their hand in the game.
   \
   &nbsp;
-  ![Player Controls](assets/readme_images/player-controls.png)
+  ![Player Controls](assets/readme_images/player-controls.PNG)
 
 &nbsp;
 - __Chip wallet__ 
@@ -48,7 +48,7 @@
   - This will add value to the user as they will be able to keep track of how much they have won or lost.
   \
   &nbsp;
-  ![Chip wallet](assets/readme_images/chip-wallet.png)
+  ![Chip wallet](assets/readme_images/chip-wallet.PNG)
 
 &nbsp;
 - __Current bet display__
@@ -58,7 +58,7 @@
   - This will add value to the user as they will be able to remember what they bet during a round. 
   \
   &nbsp;
-  ![Bet value](assets/readme_images/bet-value.png)
+  ![Bet value](assets/readme_images/bet-value.PNG)
 
 &nbsp;
 - __Hand value display__ 
@@ -68,7 +68,7 @@
   - This will be valuable to the user as they will be more easily able to figure out what the current tally of their hand and the dealer's hand, especially if they are less familiar with the rules of blackjack.
   \
   &nbsp;
-  ![Hand value](assets/readme_images/hand-value.png)
+  ![Hand value](assets/readme_images/hand-value.PNG)
 
 &nbsp;
 - __The Footer__
@@ -78,7 +78,7 @@
   - This will be valuable to the user as a way of figuring out who made the site and what they can do with it.
   \
   &nbsp;
-  ![Footer](assets/readme_images/footer.png)
+  ![Footer](assets/readme_images/footer.PNG)
 
 &nbsp;
 ### Features Left to Implement
@@ -106,40 +106,36 @@ I also wanted to add a means of having the cards animate as they appeared, prefe
 ### Central message box
 - The following table goes through each button that appears in the central message boxes, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not.
 
-|Button in box          |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:----------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|Play Blackjack         |Gives 1000 chips and opens bet prompt      |Starts round and opens bet prompt      |✔                     |
-|Play again (lose)      |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
-|Play again (win)       |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
-|Play again (blackjack) |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
-|Thanks                 |Gives 1000 chips, |Navigates to contact.html              |✔                     |
+|Button in box          |Expected Behavior                                  |What Occurs                                        |Working as intended?   |
+|:----------------------|:--------------------------------------------------|:--------------------------------------------------|:---------------------:|
+|Play Blackjack         |Gives 1000 chips and opens bet prompt              |Starts round and opens bet prompt                  |✔                     |
+|Play again (lose)      |Clears table and opens bet prompt                  |Clears table and opens bet prompt                  |✔                     |
+|Play again (win)       |Clears table and opens bet prompt                  |Clears table and opens bet prompt                  |✔                     |
+|Play again (blackjack) |Clears table and opens bet prompt                  |Clears table and opens bet prompt                  |✔                     |
+|Thanks                 |Gives 1000 chips, clears table and opens bet prompt|Gives 1000 chips, clears table and opens bet prompt|✔                     |
+|Run away               |Refreshes page                                     |Refreshes page                                     |✔                     |
 
 \
 &nbsp;
 
 ### Bet input form
-- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
+- The following table goes through each element of the bet input form, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not.
 
-|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
-|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
-|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
-|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
-|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
+|Element of form    |Expected Behavior                                                                                      |What Occurs                                                                                            |Working as intended?   |
+|:------------------|:------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|:---------------------:|
+|Number input       |Can only be set between 10 and 200 OR the chipwallet value, whichever is lowest, in increments of 10   |Can only be set between 10 and 200 OR the chipwallet value, whichever is lowest, in increments of 10   |✔                     |
+|Submit bet! button |Updates bet value from form, closes message box, displays player controls and begins round             |Updates bet value from form, closes message box, displays player controls and begins round             |✔                     |
 
 \
 &nbsp;
 ### Player controls
-- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
+- The following table goes through each button on player controls, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not.
 
-|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
-|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
-|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
-|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
-|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
+|Button on bar      |Expected Behavior                                                                                          |What Occurs                                                                                                |Working as intended?   |
+|:------------------|:----------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|:---------------------:|
+|Stand              |Hides player controls and begins dealer's turn                                                             |Hides player controls and begins dealer's turn                                                             |✔                     |
+|Hit!               |Hides double down button and adds one card to hand, then checks if hand >= 21, waits for user input if not |Hides double down button and adds one card to hand, then checks if hand >= 21, waits for user input if not |✔                     |
+|Double down!       |Doubles bet value, hides player controls, checks if hand >= 21, begins dealer turn if not                  |Doubles bet value, hides player controls, checks if hand >= 21, begins dealer turn if not                  |✔                     |
 
 \
 &nbsp;
@@ -149,26 +145,11 @@ I also wanted to add a means of having the cards animate as they appeared, prefe
 
 These were checked across each page of the website.
 
-|Link                                   |Expected Behavior                                      |What Occurs                                        |Working as intended?   |
-|:--------------------------------------|:------------------------------------------------------|:--------------------------------------------------|:---------------------:|
-|Facebook                               |Opens [Facebook](https://www.facebook.com/) in new tab |Opens [Facebook](https://www.facebook.com/) in new tab |✔                     |
-|Instagram                              |Opens [Instagram](https://www.instagram.com/) in new tab|Opens [Instagram](https://www.instagram.com/) in new tab|✔                     |
-|Twitter                                |Opens [Twitter](https://www.twitter.com/) in new tab   |Opens [Twitter](https://www.twitter.com/) in new tab   |✔                     |
-|LinkedIn                               |Opens [LinkedIn](https://www.linkedin.com/) in new tab |Opens [LinkedIn](https://www.linkedin.com/) in new tab |✔                     |
+|Link                                   |Expected Behavior                                                                      |What Occurs                                                                            |Working as intended?   |
+|:--------------------------------------|:--------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:---------------------:|
+|Github                                 |Opens [my Github](https://github.com/ocassidydev) in new tab                           |Opens [my Github](https://github.com/ocassidydev) in new tab                           |✔                     |
+|LinkedIn                               |Opens [my LinkedIn](https://www.linkedin.com/in/oran-cassidy-48aa021b8/) in new tab    |Opens [my LinkedIn](https://www.linkedin.com/in/oran-cassidy-48aa021b8/) in new tab    |✔                     |
 
-
-&nbsp;
-
-
-### Newsletter signup form 
-
-In the following table, expected results of different permutations of user input on the form were attempted and the results were recorded.
-
-|Permutation                              |Expected Behavior                              |What Occurs                                   |Working as intended?   |
-|:----------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------:|
-|Enter no text in field, hit submit       |"Please fill out this field" browser prompt    |"Please fill out this field" browser prompt   |✔                     |
-|Enter non-email text in field, hit submit|"Please enter an email address" browser prompt |"Please enter an email address" browser prompt|✔                     |
-|Enter email in field, hit submit         |Directed to form-submit.html                   |Directed to form-submit.html                  |✔                     |
 
 &nbsp;
 
@@ -178,10 +159,8 @@ Throughout the project, the appearance of the website was checked using firefox 
 &nbsp;
 ### Bugs 
 
-  - When the hamburger menu is active for small viewports and the page is loaded, the hamburger icon can take a moment to load in and the button is momentarily thinner that it should be. This is likely because the icon is accessed from font-awesome. A solution to avoid this could be to render the hamburger icon with 3 grey spans instead.  
-  - Low contrast between background of figures and the hamburger menu on small viewport sizes. Put a border on the bottom of the hamburger button to make distinction clearer.
-  - The applications landing page displayed poorly on mobile as the text was too wide.
-  - On some small viewports the homepage headline text would not display well.
+  - On certain small viewports, the card slots show up as taking more space than the page width and one ends up getting displaced below the others, despite this not being the case on other similarily size viewports and in dev tools.
+  - Although the deck is shuffled using the Fisher-Yates method as opposed to Math.random() it seems this doesn't significantly increase the randomness of the deck either way. Different suits seem highly correlated. Might be some way to generate the list of card objects more randomly, such as passing an array 1 through 13 that itself has been shuffled first for the deck constructor.
 
 &nbsp;
 ### Validator Testing 
