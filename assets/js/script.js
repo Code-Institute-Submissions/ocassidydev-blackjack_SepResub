@@ -307,6 +307,7 @@ function endMessage(returnValue){
     divDisappear("game-buttons-div");
 
     const endDiv = document.getElementById("end-message").children;
+    endDiv[2].innerHTML = "Play again";
     let bet = parseInt(document.getElementById("bet-chips").innerHTML);
 
     switch(returnValue){
@@ -314,6 +315,7 @@ function endMessage(returnValue){
             endDiv[0].innerHTML = "Blackjack!";
             bet *= 1.5;
             endDiv[1].innerHTML = `You won ${bet} chips!`;
+            
             updateChips(bet);
             resetBet();
             break;

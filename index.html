@@ -33,7 +33,7 @@
     <div id="end-message" class="centre-message">
         <h1></h1>
         <h2></h2>
-        <button id="play-again-button" onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');" class="centre-message-button">Play again</button>
+        <button id="play-again-button" onclick="discard(playerHand, dealerHand, discardDeck); divDisappear('end-message'); divAppear('gamble-amount');" class="centre-message-button"></button>
     </div>
 
     <!-- main content -->
@@ -82,7 +82,7 @@
         </div>
 
         <div id="game-buttons-div">
-            <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stay</button>
+            <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stand</button>
             <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
             <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
         </div>

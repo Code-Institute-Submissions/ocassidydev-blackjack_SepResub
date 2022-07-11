@@ -7,78 +7,78 @@
 ## Features 
 
 ### Existing Features
-- __Central message box__
+- __Central message boxes__
 
-    - Featured on each page as a fully responsive element.
-    - Fixed in place at the top of the screen while scrolling so that the user can seemlessly navigate the website regardless of where they are on the page.
-    - Depending on which page the user is on, the currently active page will be highlighted in the navigation bar.
-    - The site logo also serves as a navigation link to get back to the home page.
-    - This will be valuable to the user as a means of navigating the site without using the back button and as an indication of where they are in the site.
+    - These are divs which appear and disappear for the user depending where the accompanying script is in its flow control.
+    - Fixed in place at the center of the screen's interface so the user will easily see them.
+    - The first message box welcomes the player and gives them their chips.
+    - The second message box contains a form which allows the player to set their bet for that particular round.
+    - The third message box is dynamic in its content, updating from the script depending on if the player get blackjack, wins, loses, or ties.
+    - This will be valuable to the user as a means of conveying what is happening in the game, and immersing them in the blackjack experience.
     \
     &nbsp;
-    ![Navigation Bar](assets/readme_images/nav.png)
+    ![Message box1](assets/readme_images/message-box1.png)
+    ![Message box2](assets/readme_images/message-box2.png)
 
 &nbsp;
 - __Card boxes__
 
-    - Under certain screen sizes, the navigation bar on each page disappears and is replaced by a hamburger button
-    - This button, coded purely in HTML/CSS, serves as a dropdown menu with all the same navigation links as the naviagtion bar.
-    - Hamburger button coded to postion itself under the site logo under certain screen sizes, so that the site logo has space to be read.
-    - This will be valuable to users on mobile devices to gain the same functionality as the navigation bar.
+    - These are divs which are placed in fixed positions on the screen, with responsive sizing.
+    - They show where cards will go when played, and accomodate card images when they are in play.
+    - This will be valuable to the user as they give the feeling of a casino table and display the current cards in play.
     \
     &nbsp;
-    ![Hamburger Navigation](assets/readme_images/hamnav.PNG)
+    ![Card boxes](assets/readme_images/card-boxes.png)
 
 &nbsp;
 - __Player controls__
 
-  - The top of each page includes an artistically rendered image of a nanomaterial and emphasized text which will stand out and interest the user in learning more about the topic.
-  - The text will either serve as a tagline for the landing page or contain the page title.
-  - The section also includes an eye-catching animation to bring attention to this image and draw the user into the site.
-  - This feature will add value for the user by giving a visually appealing image to interest them in the content, as well as tell the user where they are in the website.
+  - These are a set of buttons which will only appear when the user needs to press them as input for the game.
+  - Each button causes a unique set of events to occur in the accompanying script, representing the 3 options in a round of blackjack.
+  - This feature will add value for the user by giving them a means of controlling their hand in the game.
   \
   &nbsp;
-![Main Image](assets/readme_images/page-main-image.png)
+  ![Player Controls](assets/readme_images/player-controls.png)
 
 &nbsp;
 - __Chip wallet__ 
 
-  - This class of div elements is designed to contain text and to be colored.
-  - They can be uniformly styled from a single class declaration in the css.
-  - This will add value to the user as they will experience a uniform yet stylistic presentation of the site's text content.
+  - This is a div containing the current number of chips that the player has.
+  - The value within is dynamically updated from the accompanying javascript based on whether the player wins or loses bets.
+  - This will add value to the user as they will be able to keep track of how much they have won or lost.
   \
   &nbsp;
-  ![Textbox](assets/readme_images/textbox.png)
+  ![Chip wallet](assets/readme_images/chip-wallet.png)
 
 &nbsp;
 - __Current bet display__
 
-  - This class of image elements is designed to contain images and caption text. 
-  - They can also be uniformly styled in the css. 
-  - This will add value to the user as they will be presented the site's image content in a uniform and semantically unambigous manner. 
+  - This is a div containing the current bet value the player has made. 
+  - The value within also dynamically updates from the accompanying javascript, using the value the user inputs in the form to set its value.
+  - This will add value to the user as they will be able to remember what they bet during a round. 
   \
   &nbsp;
-  ![Figure](assets/readme_images/figure.png)
+  ![Bet value](assets/readme_images/bet-value.png)
 
 &nbsp;
 - __Hand value display__ 
 
-  - The footer includes icons which serve as social media links to nanonow's various social media pages.
-  - Simple font-awesome icons are used to keep this minimalistic.
-  - This will be valuable to the user as a means for them to become connected with nanonow's social pages for nanotechnology news.
+  - These are divs which contain the value of the hands of cards they are placed beside.
+  - The values in these also dynamically update, showing the face value of all cards currently in the player/dealer's hand.
+  - This will be valuable to the user as they will be more easily able to figure out what the current tally of their hand and the dealer's hand, especially if they are less familiar with the rules of blackjack.
   \
   &nbsp;
-  ![Footer](assets/readme_images/footer.PNG)
+  ![Hand value](assets/readme_images/hand-value.png)
 
 &nbsp;
 - __The Footer__
 
-  - The about section introduces the user to the reasons why learning about nanotechnology is useful, along with a simple demonstration to appreciate the size of the nanoscale.
-  - Text is displayed in colored and stylistic text boxes, with images displayed in figures beside the textboxes to showcase the different applications of nanotechnology and assist in the scale explanation.
-  - This will be valuable to the user as a visually appealing, non-intimidating layman's explanation of the topic to get the user interested in learning more and reading further into the site.
+  - The footer contains some social media links and a nice message.
+  - The links utilize font awesome icons to give a minimalistic look.
+  - This will be valuable to the user as a way of figuring out who made the site and what they can do with it.
   \
   &nbsp;
-  ![About](assets/readme_images/about.png)
+  ![Footer](assets/readme_images/footer.png)
 
 &nbsp;
 ### Features Left to Implement
@@ -87,37 +87,32 @@
 
 ***Persistent chip wallet***
 
-One feature that I wanted to implement was a means of the about button in the navigation bar to change to the active color when scrolling down past a certain point of the landing page, so it would look like this: 
-
-![AboutBar](assets/readme_images/aboutbar.PNG)
-
-However as far as I have checked querying how far the user is scrolled down the page is only possible to do with javascript, which is outside of the scope of the module.
+I wanted to implement a way to cache the user's current chip wallet in the browser, such that even if they close the tab or refresh it will still be there. This would also be accompanied by a different welcome message than the default, so that they realize they can pick up where they left off. One way to do this may be to let the user set a username as the first message box, which could then be saved as the name of a cookie which would then be retrieved if they put the same username in next time. The cookie could contain an object which would have the player's chip wallet stored on it.
 
 &nbsp;
 
-***Slowed card dealing***
+***Slowed sequential card dealing***
 
-I also wanted to add a page containing a widget that could scrub social media for mentions of nanotechnology using some kind of API, and then display them as a scrollable element. However this is much too complicated for the current point I am at in the course.
-
+I also wanted to make the cards land on the table in a non-instantaneous, sequential fashion to give a more realistic card game feel. However, the way that my javascript was designed would make that very difficult to design. If I were to attempt it, I would try to implement a solution using promises, along with likely redesigning the flow control of much of startRound(), continueRound() and dealerPlay().
 &nbsp;
 
 ***Card dealing animations***
 
-I also wanted to add a page containing a widget that could scrub social media for mentions of nanotechnology using some kind of API, and then display them as a scrollable element. However this is much too complicated for the current point I am at in the course.
+I also wanted to add a means of having the cards animate as they appeared, preferably by moving from something graphical element that is stylized like a deck and to flip over from face down. This could be acheived in css at least in part, however until I can get cards to play sequentially doing this is redundant, the game would just skip to the round end messages while the player is still seeing card dealing animations and it would be too confusing. The same redesign as mentioned above would need to be implemented first.
 
 &nbsp;
 
 ## Testing 
 ### Central message box
-- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
+- The following table goes through each button that appears in the central message boxes, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not.
 
-|Button in box      |Expected Behavior                      |What Occurs                            |Working as intended?   |
-|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
-|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
-|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
-|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
-|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
-|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
+|Button in box          |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:----------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|Play Blackjack         |Gives 1000 chips and opens bet prompt      |Starts round and opens bet prompt      |✔                     |
+|Play again (lose)      |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
+|Play again (win)       |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
+|Play again (blackjack) |Restarts round and opens bet prompt    |Restarts round and opens bet prompt    |✔                     |
+|Thanks                 |Gives 1000 chips, |Navigates to contact.html              |✔                     |
 
 \
 &nbsp;
