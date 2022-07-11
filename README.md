@@ -174,13 +174,13 @@ Throughout the project, the appearance of the website was checked using firefox 
 &nbsp;
 ### Unfixed Bugs
 
-   - Bug where hamburger icon fails to load in quick enough on page load.
+   - On certain small viewports, the card slots show up as taking more space than the page width and one ends up getting displaced below the others, despite this not being the case on other similarily size viewports and in dev tools.
    - Some pages on the site have a lower than desired lighthouse performance score (materials - 88, applications - 78). This is likely due to the quantity of images in the site and a lack of complete optimisation of image formats. This may cause slower loading times.
    
 &nbsp;
 ## Deployment
 
-- This project was deployed through github pages at this [link](https://ocassidydev.github.io/nanonow/contact.html), using the following steps:
+- This project was deployed through github pages at this [link](https://ocassidydev.github.io/blackjack/), using the following steps:
 
   - From the github repository, navigated to settings
   - Clicked on "Pages" 
@@ -191,7 +191,7 @@ Throughout the project, the appearance of the website was checked using firefox 
 
 - For local deployment, run the following command:
 
-      git clone https://github.com/ocassidydev/nanonow.git
+      git clone https://github.com/ocassidydev/blackjack.git
 
 &nbsp;
 ## Credits 

@@ -229,19 +229,13 @@ footer p {
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1170px) {
     .card-div{
         margin: 0.75% 0.8%;
     }
 }
 
 @media screen and (max-width: 1050px) {
-    #game-buttons-div{
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 1000px) {
     #game-buttons-div{
         width: 45%;
     }
@@ -269,9 +263,15 @@ footer p {
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     .card-div{
         margin: 0.75% 0.65%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card-div{
+        margin: 0.75% 0.6%;
     }
 
     .centre-message-button{
@@ -285,7 +285,7 @@ footer p {
 
 @media screen and (max-width: 730px) {
     .card-div {
-        margin: 0.75% 0.6%;
+        margin: 0.75% 0.55%;
     }
 }
 
@@ -301,13 +301,13 @@ footer p {
 
 @media screen and (max-width: 670px) {
     .card-div {
-        margin: 0.75% 0.55%;
+        margin: 0.75% 0.5%;
     }
 }
 
 @media screen and (max-width: 630px) {
     .card-div {
-        margin: 0.75% 0.5%;
+        margin: 0.75% 0.45%;
     }
 
     #gamble-amount input{
@@ -321,13 +321,13 @@ footer p {
 
 @media screen and (max-width: 590px) {
     .card-div {
-        margin: 0.75% 0.45%;
+        margin: 0.75% 0.4%;
     }
 }
 
 @media screen and (max-width: 550px) {
     .card-div {
-        margin: 0.75% 0.4%;
+        margin: 0.75% 0.35%;
     }
 
     .centre-message-button{
@@ -335,9 +335,9 @@ footer p {
     }
 }
 
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 520px) {
     .card-div {
-        margin: 0.75% 0.35%;
+        margin: 0.75% 0.25%;
     }
 
     #gamble-amount input{
@@ -351,7 +351,7 @@ footer p {
 
 @media screen and (max-width: 485px) {
     .card-div {
-        margin: 0.75% 0.3%;
+        margin: 0.75% 0.2%;
     }
 
     #gamble-amount button {
@@ -362,7 +362,7 @@ footer p {
 
 @media screen and (max-width: 465px) {
     .card-div {
-        margin: 0.75% 0.2%;
+        margin: 0.75% 0.1%;
     }
 
     #gamble-amount button {
@@ -381,13 +381,13 @@ footer p {
 
 @media screen and (max-width: 415px) {
     .card-div {
-        margin: 0.75% 0.15%;
+        margin: 0.75% 0.05%;
     }
 }
 
 @media screen and (max-width: 395px) {
     .card-div {
-        margin: 0.75% 0.1%;
+        margin: 0.75% 0;
     }
 
     .game-button{
@@ -397,7 +397,7 @@ footer p {
 
 @media screen and (max-width: 380px) {
     .card-div {
-        margin: 0.75% 0.05%;
+        margin: 0.75% 0;
     }
 
     .num-display{
@@ -405,13 +405,7 @@ footer p {
     }
 }
 
-@media screen and (max-width: 380px) {
-    .card-div {
-        margin: 0.75% 0;
-    }
-}
-
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
     .card-div {
         width: 9.7%;
     }
@@ -433,21 +427,25 @@ footer p {
     }
 }
 
-@media screen and (max-width: 310px) {
+@media screen and (max-width: 315px) {
     .card-div {
         width: 9.4%;
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 305px) {
     .card-div {
         width: 9.2%;
     }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 285px) {
     .card-div {
         width: 9%;
+    }
+
+    .centre-message{
+        width: 90%;
     }
 }
 
