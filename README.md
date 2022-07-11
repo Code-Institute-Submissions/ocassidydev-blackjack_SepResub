@@ -167,14 +167,14 @@ Throughout the project, the appearance of the website was checked using firefox 
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Focassidydev.github.io%2Fnanonow%2Findex.html), with exception to one warning regarding the use of a label in an anchor tag (which was necessary for it to work as intended)
+  - Errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Focassidydev.github.io%2Fblackjack%2F), however all of these relate to the various pieces of dynamic content in the page (messages that would hvae different content depending on win, loss, etc., the slots where the card images would load). In future, I will try to design my web applications to be more compliant with the accepted best practice. However, none of these errors seem to harm the overall function of the website.
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Focassidydev.github.io%2Fblackjack%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- Lighthouse
+  - The site had an exceptional lighthouse score, at 99 for performance, 100 for accessibility, 100 for best practices and 92 for SEO. 
 
 &nbsp;
 ### Unfixed Bugs
-
-   - Some pages on the site have a lower than desired lighthouse performance score (materials - 88, applications - 78). This is likely due to the quantity of images in the site and a lack of complete optimisation of image formats. This may cause slower loading times.
    
 &nbsp;
 ## Deployment
