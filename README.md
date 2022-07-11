@@ -1,108 +1,375 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# NanoNow
 
-Welcome ocassidydev,
+[Blackjack](https://ocassidydev.github.io/blackjack/) is a simple web app game that allows the player to gamble virtual chips on blackjack, with a script as the dealer. The site will be targeted towards people who are looking to kill some time and have fun. Blackjack will be useful to anyone who would like to practice the basics of card counting to master this classic casino game. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Mockup](assets/readme_images/mockup.png)
+&nbsp;
+## Features 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### Existing Features
+- __Navigation Bar__
 
-## Gitpod Reminders
+    - Featured on each page as a fully responsive element.
+    - Fixed in place at the top of the screen while scrolling so that the user can seemlessly navigate the website regardless of where they are on the page.
+    - Depending on which page the user is on, the currently active page will be highlighted in the navigation bar.
+    - The site logo also serves as a navigation link to get back to the home page.
+    - This will be valuable to the user as a means of navigating the site without using the back button and as an indication of where they are in the site.
+    \
+    &nbsp;
+    ![Navigation Bar](assets/readme_images/nav.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+&nbsp;
+- __Hamburger navigation bar__
 
-`python3 -m http.server`
+    - Under certain screen sizes, the navigation bar on each page disappears and is replaced by a hamburger button
+    - This button, coded purely in HTML/CSS, serves as a dropdown menu with all the same navigation links as the naviagtion bar.
+    - Hamburger button coded to postion itself under the site logo under certain screen sizes, so that the site logo has space to be read.
+    - This will be valuable to users on mobile devices to gain the same functionality as the navigation bar.
+    \
+    &nbsp;
+    ![Hamburger Navigation](assets/readme_images/hamnav.PNG)
 
-A blue button should appear to click: _Make Public_,
+&nbsp;
+- __Page main image__
 
-Another blue button should appear to click: _Open Browser_.
+  - The top of each page includes an artistically rendered image of a nanomaterial and emphasized text which will stand out and interest the user in learning more about the topic.
+  - The text will either serve as a tagline for the landing page or contain the page title.
+  - The section also includes an eye-catching animation to bring attention to this image and draw the user into the site.
+  - This feature will add value for the user by giving a visually appealing image to interest them in the content, as well as tell the user where they are in the website.
+  \
+  &nbsp;
+![Main Image](assets/readme_images/page-main-image.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+&nbsp;
+- __Text boxes__ 
 
-A blue button should appear to click: _Make Public_,
+  - This class of div elements is designed to contain text and to be colored.
+  - They can be uniformly styled from a single class declaration in the css.
+  - This will add value to the user as they will experience a uniform yet stylistic presentation of the site's text content.
+  \
+  &nbsp;
+  ![Textbox](assets/readme_images/textbox.png)
 
-Another blue button should appear to click: _Open Browser_.
+&nbsp;
+- __Figures__
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  - This class of image elements is designed to contain images and caption text. 
+  - They can also be uniformly styled in the css. 
+  - This will add value to the user as they will be presented the site's image content in a uniform and semantically unambigous manner. 
+  \
+  &nbsp;
+  ![Figure](assets/readme_images/figure.png)
 
-To log into the Heroku toolbelt CLI:
+&nbsp;
+- __The Footer__ 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - The footer includes icons which serve as social media links to nanonow's various social media pages.
+  - Simple font-awesome icons are used to keep this minimalistic.
+  - This will be valuable to the user as a means for them to become connected with nanonow's social pages for nanotechnology news.
+  \
+  &nbsp;
+  ![Footer](assets/readme_images/footer.PNG)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+&nbsp;
+- __About Section__
 
-------
+  - The about section introduces the user to the reasons why learning about nanotechnology is useful, along with a simple demonstration to appreciate the size of the nanoscale.
+  - Text is displayed in colored and stylistic text boxes, with images displayed in figures beside the textboxes to showcase the different applications of nanotechnology and assist in the scale explanation.
+  - This will be valuable to the user as a visually appealing, non-intimidating layman's explanation of the topic to get the user interested in learning more and reading further into the site.
+  \
+  &nbsp;
+  ![About](assets/readme_images/about.png)
 
-## Release History
+&nbsp;
+- __Materials Main Section__
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  - This page educates the user on the different types of nanomaterials that exist, how they are classified, and their properties. 
+  - Text is displayed in colored and stylistic text boxes, with images of different nanomaterials displayed in figures to supplement them.
+  - This will add value to the user as they will be able to deepen their knowledge on the topic with at an accessible level through a visually appealing webpage.
+  \
+  &nbsp;
+  ![Materials](assets/readme_images/materials.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+&nbsp;
+- __Applications Main Section__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - This page gives an overview of some of the applications of 2-D materials to electronics.
+  - It written in such a way as to be as self-contained in information from the other sections as, so an interested user may immediately jump straight to it.
+  - Text is displayed in colored and stylistic text boxes, with images of the different applications displayed in figures beside their respective textboxes.
+  - This will add value to the user as it will excite them about futuristic technology made possible by nanoscience.
+  \
+  &nbsp;
+  ![Applications](assets/readme_images/applications.png)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+&nbsp;
+- __Contact Page__
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+  - This page contains the contact details for nanonow, as well as a newsletter signup form. 
+  - This will add value to the user by providing them detailed information and options of how to find out more.
+  \
+  &nbsp;
+  ![Contact](assets/readme_images/contact.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+&nbsp;
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- __Newsletter Signup Form__
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+   - This form takes the users email to put them on a mailing list for nanotechnology news.
+   - The form is written in such a way to accomodate a call to action for the user to provide their email address.
+   - This will add value to the user by giving them a means of being regularly updated about this field.
+  \
+  &nbsp;
+  ![Newsletter](assets/readme_images/signup.PNG)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+&nbsp;
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- __Newsletter Submission Page__
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  - The user is navigated to this page on submitting the newsletter.
+  - There is an anchor tag to navigate back to the home page.
+  - This will add value to the user as they will have a clear indication that their email was submitted, along with being informed what to expect next. It also gives a straightforward means for them to navigate back into the site. 
+  \
+  &nbsp;
+  ![Submission](assets/readme_images/thanks.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+&nbsp;
+### Features Left to Implement
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+&nbsp;
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+***About in nav-bar appearance***
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+One feature that I wanted to implement was a means of the about button in the navigation bar to change to the active color when scrolling down past a certain point of the landing page, so it would look like this: 
 
-------
+![AboutBar](assets/readme_images/aboutbar.PNG)
 
-## FAQ about the uptime script
+However as far as I have checked querying how far the user is scrolled down the page is only possible to do with javascript, which is outside of the scope of the module.
 
-**Why have you added this script?**
+&nbsp;
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+***News Page***
 
-**How will this affect me?**
+I also wanted to add a page containing a widget that could scrub social media for mentions of nanotechnology using some kind of API, and then display them as a scrollable element. However this is much too complicated for the current point I am at in the course.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+&nbsp;
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Testing 
+### Navigation Bars
+\
+&nbsp;
+**Navigation Bar**
+- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
+|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
+|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
+|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
+|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
 
-**So….?**
+\
+&nbsp;
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**Hamburger Navigation Bar**
 
-**Can I opt out?**
+- Similar to the previous section, the below table how each button in the hamburger menu is expected to and actually functions. Each button was validated across each page of the website.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|Hamburger          |Drops down vertical navigation bar     |Drops down vertical navigation bar     |✔                     |
+|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
+|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
+|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
+|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
+|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+\
+&nbsp;
 
-**Anything more?**
+### Links
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+&nbsp;
 
----
+**Links in Footer page**
 
-Happy coding!
+These were checked across each page of the website.
+
+|Link                                   |Expected Behavior                                      |What Occurs                                        |Working as intended?   |
+|:--------------------------------------|:------------------------------------------------------|:--------------------------------------------------|:---------------------:|
+|Facebook                               |Opens [Facebook](https://www.facebook.com/) in new tab |Opens [Facebook](https://www.facebook.com/) in new tab |✔                     |
+|Instagram                              |Opens [Instagram](https://www.instagram.com/) in new tab|Opens [Instagram](https://www.instagram.com/) in new tab|✔                     |
+|Twitter                                |Opens [Twitter](https://www.twitter.com/) in new tab   |Opens [Twitter](https://www.twitter.com/) in new tab   |✔                     |
+|LinkedIn                               |Opens [LinkedIn](https://www.linkedin.com/) in new tab |Opens [LinkedIn](https://www.linkedin.com/) in new tab |✔                     |
+
+
+&nbsp;
+
+**Links in Materials page**
+
+|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
+|"There's plenty of room at the bottom" |Opens [wikipedia page](https://en.wikipedia.org/wiki/There%27s_Plenty_of_Room_at_the_Bottom) in new tab|Opens [wikipedia page](https://en.wikipedia.org/wiki/There%27s_Plenty_of_Room_at_the_Bottom) in new tab|✔                     |
+|materials                              |Navigates to materials.html in same tab|Navigates to materials.html in same tab|✔                     |
+
+&nbsp;
+
+**Links in Applications page**
+
+|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
+|Yael Hanein Lab (in Tatoo Electronics) |Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|✔                     |
+|Yael Hanein Lab (in figure caption)    |Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|Opens [Yael Hanein's](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg) webpage in new tab|✔                     |
+
+&nbsp;
+
+**Links in Contact page**
+
+|Link                                   |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:--------------------------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|NANONOW (page logo)                    |Navigates to index.html in same tab    |Navigates to index.html in same tab    |✔                     |
+|info@nanonow.com                       |Opens email prompt in browser          |Opens email prompt in browser          |✔                     |
+
+&nbsp;
+
+### Newsletter signup form 
+
+In the following table, expected results of different permutations of user input on the form were attempted and the results were recorded.
+
+|Permutation                              |Expected Behavior                              |What Occurs                                   |Working as intended?   |
+|:----------------------------------------|:----------------------------------------------|:---------------------------------------------|:---------------------:|
+|Enter no text in field, hit submit       |"Please fill out this field" browser prompt    |"Please fill out this field" browser prompt   |✔                     |
+|Enter non-email text in field, hit submit|"Please enter an email address" browser prompt |"Please enter an email address" browser prompt|✔                     |
+|Enter email in field, hit submit         |Directed to form-submit.html                   |Directed to form-submit.html                  |✔                     |
+
+&nbsp;
+
+### Different viewports
+Throughout the project, the appearance of the website was checked using firefox dev tools set devices. I also quickly browsed through the finished site on my phone.
+
+&nbsp;
+### Bugs 
+
+  - When the hamburger menu is active for small viewports and the page is loaded, the hamburger icon can take a moment to load in and the button is momentarily thinner that it should be. This is likely because the icon is accessed from font-awesome. A solution to avoid this could be to render the hamburger icon with 3 grey spans instead.  
+  - Low contrast between background of figures and the hamburger menu on small viewport sizes. Put a border on the bottom of the hamburger button to make distinction clearer.
+  - The applications landing page displayed poorly on mobile as the text was too wide.
+  - On some small viewports the homepage headline text would not display well.
+
+&nbsp;
+### Validator Testing 
+
+- HTML
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Focassidydev.github.io%2Fnanonow%2Findex.html), with exception to one warning regarding the use of a label in an anchor tag (which was necessary for it to work as intended)
+- CSS
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Focassidydev.github.io%2Fnanonow%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+&nbsp;
+### Unfixed Bugs
+
+   - Bug where hamburger icon fails to load in quick enough on page load.
+   - Some pages on the site have a lower than desired lighthouse performance score (materials - 88, applications - 78). This is likely due to the quantity of images in the site and a lack of complete optimisation of image formats. This may cause slower loading times.
+   
+&nbsp;
+## Deployment
+
+- This project was deployed through github pages at this [link](https://ocassidydev.github.io/nanonow/contact.html), using the following steps:
+
+  - From the github repository, navigated to settings
+  - Clicked on "Pages" 
+  - On the drop down menu that read "none", clicked and changed to "main"
+  - Clicked save
+
+&nbsp;
+
+- For local deployment, run the following command:
+
+      git clone https://github.com/ocassidydev/nanonow.git
+
+&nbsp;
+## Credits 
+
+### Code
+
+- The hamburger menu was created with code from a page on [Code-Boxx](https://code-boxx.com/simple-responsive-pure-css-hamburger-menu/).
+- Centering the page titles in the image div was obtained from css code on [hubspot](https://blog.hubspot.com/website/center-div-css)
+- A number of individual queries and fixes were sought on [Stack Overflow](https://stackoverflow.com/).
+- For refreshing certain concepts and documentations, I used [W3S Schools](https://www.w3schools.com/).
+
+&nbsp;
+### Content 
+
+- Inspiration was taken from [nano.gov](https://www.nano.gov/about-nanotechnology/applications-nanotechnology) and [Wikipedia's Applications of Nanotechnology page](https://en.wikipedia.org/wiki/Applications_of_nanotechnology) to populate the site content.
+- I used various wikipedia pages on the topic to check my knowledge as I was entering content.
+- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
+
+&nbsp;
+### Media
+
+The following lists each image by their name in the /assets/images folder, with a link to the site they were taken from. Where possible, they are listed in order of appearance.
+
+- __Homepage__
+  - graphene - [SingularityHub](https://singularityhub.com/2018/08/05/beyond-graphene-the-promise-of-2d-materials/)
+  - bodyarmor - [Pinterest](https://www.pinterest.ie/pin/warriors-of-honor--534661786985745203/)
+  - solarpanels - [Wiley Online Library](https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)2567-3165.perovskite-materials)
+  - nostain - [LinkedIn](https://www.linkedin.com/pulse/our-fluid-repellent-stain-resistant-clothing-uniforms-manavalan/?trk=portfolio_article-card_title)
+  - hydrogen - [Fine Art America](https://fineartamerica.com/featured/hydrogen-fuel-cell-concept-car-jim-west.html?product=art-print)
+  
+  - humanheight - [Engineering Stack Exchange](https://engineering.stackexchange.com/questions/21200/what-is-best-sensor-method-to-measure-human-height)
+  - coin - [Etsy](https://www.etsy.com/ie/listing/783952494/coin-1-euro-latvia-2014-latvijas)
+  - pinhead - [Fine Art America](https://fineartamerica.com/featured/pin-head-and-point-dennis-kunkel-microscopyscience-photo-library.html)
+  - hair - [Micropedia](https://microspedia.blogspot.com/2017/09/microscope-view-of-hair.html)
+  - nanoscale - [Dartmouth Undergraduate Journal of Science](https://sites.dartmouth.edu/dujs/2009/02/22/turning-to-nanotechnology-for-pollution-control-applications-of-nanoparticles/)
+
+- __Materials page__
+  - buckies - https://www.chemistryworld.com/news/buckyballs-prove-to-be-a-magnetic-proposition-for-copper/8833.article
+
+  - metalnanoparticle - [Anton Paar](https://www.anton-paar.com/se-en/products/applications/size-and-shape-of-gold-nanoparticles-in-toluene-via-saxs/)
+  - buckyball - [Buckminister Fuller Institute](https://www.bfi.org/about-fuller/big-ideas/buckminsterfullerene/)
+  - liposome - [Skeptical Raptor](https://www.skepticalraptor.com/skepticalraptorblog.php/lipid-nanoparticles-in-covid-19-mrna-vaccines-ican-fails-science/)
+
+  - cntsingle - [The World of Nanoscience](https://worldofnanoscience.weebly.com/nanotube--carbon-fiber-overview.html)
+  - nanowire - [Physics World](https://physicsworld.com/a/nanowire-thickness-alters-gaas-band-structure/)
+  - dna - [The Healthcare Technology Report](https://thehealthcaretechnologyreport.com/environmental-dna-may-have-applications-for-disease-transmission-among-other-uses/)
+
+  - graphenesheet - [AZO Materials](https://www.azom.com/article.aspx?ArticleID=21100)
+  - graphenefootball - [Ossilia](https://www.ossila.com/pages/introduction-2d-materials)
+  - boronnitride - [Ossilia](https://www.ossila.com/products/hexagonal-boron-nitride)
+  - molybdenumdisulfide - [Ossilia](https://www.ossila.com/en-eu/pages/molybdenum-disulfide-mos2)
+
+- __Applications page__
+  - cnt - [Investment Castings](https://www.investment-castings.net/what-are-carbon-nanotubes-and-why-should-you-care/)
+
+  - robot - [Medical Device Network](https://www.medicaldevice-network.com/comment/nanotechnology-medicine-technology/)
+
+  - graphenebattery - [AZO Materials](https://www.azom.com/article.aspx?ArticleID=21103) 
+  - flexbattery - [Phandroid](https://phandroid.com/2012/08/06/this-flexible-battery-could-soon-be-powering-our-flexible-android-devices-video/)
+
+  - skindisplay - [Institute of Electrical and Electronics Engineers](https://spectrum.ieee.org/skin-displays-will-give-wearables-their-independence)
+  - wearable - [The International Society for Optics and Photonics](https://spie.org/news/wearable-photonics?SSO=1)
+  
+  - nanotattoo - [Yael Hanein Lab](https://nano.tau.ac.il/hanein/index.php/projects/tattoo-semg)
+  - armphone - [Team Trade](https://blog.teamtrade.cz/crumpled-carbon-nanotube-forests-lead-to-wearable-tech/)
+
+- __Contact page__
+  - nanopart - [Bioleagues Worldwide's Twitter](https://twitter.com/bioleagues/status/975606779533869056)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
