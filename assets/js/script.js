@@ -8,7 +8,7 @@ class Card {
                 this.id = "ace";
                 // ace can have value of 1 or 11, this function is to handle this
                 this.value = function(sum) {
-                    if(sum<11) {
+                    if(sum<11 && !(sum > 21)) {
                         return 11;
                     }
                     else {
@@ -134,13 +134,16 @@ class Hand{
 
             this.nextCardSpot = [4,-1,1];
         }
-        // function that adds up the value of the hand
+        /**
+         * adds up the value of the hand
+         * @returns int
+         */
         this.sumUp = function() {
             let sum = 0;
             
             for(let i of this.cards){
                 if(i.id === "ace"){
-                    sum += i.value(sum);
+                    sum += i.value(this.aceSum());
                 }
                 else{
                     sum += i.value;
@@ -148,6 +151,20 @@ class Hand{
             }
 
             document.getElementById(this.handOwner+"-value").innerHTML = sum;
+            return sum;
+        }
+        this.aceSum = function() {
+            let sum = 0;
+            
+            for(let i of this.cards){
+                if(i.id === "ace"){
+                    sum += 0;
+                }
+                else{
+                    sum += i.value;
+                }
+            }
+
             return sum;
         }
     }
