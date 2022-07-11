@@ -76,7 +76,7 @@ class Hand{
         this.cards = [];
         this.handOwner = player;
         this.nextCardSpot = [4,-1,1];
-        this.cardPadding = 0;
+        this.cardPadding = document.getElementById(this.handOwner+"-hand").children[0].style.paddingTop;
         /**
          * plays a card from the deck to the hand
          * @param {Deck} deck 
@@ -121,7 +121,7 @@ class Hand{
                 image = cardSpots[i].children[0];
 
                 image.setAttribute("src", "");
-                cardSpots[i].style.paddingTop = "14%";
+                cardSpots[i].style.paddingTop = this.cardPadding;
                 image.setAttribute("alt","");
 
                 this.nextCardSpot[0] += (this.nextCardSpot[2]-1) * this.nextCardSpot[1];
