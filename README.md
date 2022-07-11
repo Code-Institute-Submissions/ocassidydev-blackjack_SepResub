@@ -111,7 +111,7 @@ I also wanted to add a page containing a widget that could scrub social media fo
 ### Central message box
 - The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
 
-|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|Button in box      |Expected Behavior                      |What Occurs                            |Working as intended?   |
 |:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
 |Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
 |Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
@@ -135,7 +135,21 @@ I also wanted to add a page containing a widget that could scrub social media fo
 
 \
 &nbsp;
+### Player controls
+- The following table goes through each button on the navigation bar, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not. Each button was checked individually on each page.
 
+|Button on bar      |Expected Behavior                      |What Occurs                            |Working as intended?   |
+|:------------------|:--------------------------------------|:--------------------------------------|:---------------------:|
+|Home               |Navigates to index.html                |Navigates to index.html                |✔                     |
+|Materials          |Navigates to materials.html            |Navigates to materials.html            |✔                     |
+|Applications       |Navigates to applications.html         |Navigates to applications.html         |✔                     |
+|About              |Navigates to about anchor in index.html|Navigates to about anchor in index.html|✔                     |
+|Contact            |Navigates to contact.html              |Navigates to contact.html              |✔                     |
+
+\
+&nbsp;
+
+### Links
 **Links in Footer**
 
 These were checked across each page of the website.
