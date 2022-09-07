@@ -10,6 +10,7 @@
 - __About Page__
   - This is a page which appears when the user accesses the site. It tells the user what the site is for and why they might want to use it. 
   - Features a background image to give a straightforward indication of the site's purpose.
+  - Has a straightforward about message which prompts the user to press a button to redirect them to the page containing the game.
   - This is valuable to the user as it welcomes them to the website. 
   \
   &nbsp;
