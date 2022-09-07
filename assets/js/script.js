@@ -180,7 +180,7 @@ function updateChips(value) {
         document.getElementById("bet").setAttribute("max", 200);
     }
 
-    if(newChips === 0){
+    if(newChips <= 0){
         const endDiv = document.getElementById("end-message").children;
         endDiv[0].innerHTML = "Out of chips!";
         endDiv[1].innerHTML = "You gambled away every chip you had. However, as we're feeling nice, have another 1,000!"
@@ -188,7 +188,7 @@ function updateChips(value) {
         endDiv[2].setAttribute("onclick", "discard(playerHand, dealerHand, discardDeck); updateChips(1000); divDisappear('end-message'); divAppear('gamble-amount');")
         document.getElementById("bet").setAttribute("max", 200);
     }
-    // Easrter egg if the player gets to 10000
+    // Easter egg if the player gets to 10000
     else if(newChips > 10000){
         const endDiv = document.getElementById("end-message").children;
         endDiv[0].innerHTML = "Stop Cheating!";
@@ -232,7 +232,12 @@ function startRound(hand, deck, discard){
     }
     else{
         divAppear('game-buttons-div');
-        divAppear("double-down");
+        
+        bet = parseInt(document.getElementById("bet-chips").innerHTML);
+        chips = parseInt(document.getElementById("chips").innerHTML);
+        if (2*bet <= chips) {
+            divAppear("double-down");
+        }
     }
 }
 
@@ -344,6 +349,7 @@ function endMessage(returnValue){
         case 3:
             endDiv[0].innerHTML = "Tie!";
             endDiv[1].innerHTML = `${bet} chips will be added to the next rounds bet.`
+            updateChips(-bet);
             break;
         default:
             alert("Error: invalid return value for end of round");

@@ -162,6 +162,7 @@ Throughout the project, the appearance of the website was checked using firefox 
   - Bug where if the player ran out of chips and was given the message giving them more, the button in the end message in subsequent rounds had "Thanks" as the text rather than "Play again"
   - On certain small viewports, the card slots show up as taking more space than the page width and one ends up getting displaced below the others, despite this not being the case on other similarily size viewports and in dev tools.
   - Although the array of cards in the deck is shuffled using the Fisher-Yates method as opposed to Math.random(), it seems this doesn't significantly increase the randomness of the deck either way. Different suits seem highly correlated. Might be some way to generate the list of card objects more randomly, such as passing an array 1 through 13 that itself has been shuffled first for the deck constructor.
+  - Bug where if player has < 400 chips, if the player doubled down on a bet where the value was twice that of their remaining chips they would have negative chips and the game would bug out 
 
 &nbsp;
 ### Validator Testing 

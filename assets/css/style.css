@@ -24,6 +24,13 @@ li {
     text-align: center;
 }
 
+/* landing page */
+#main-page-div{
+    height: 100%;
+    width: 100%;
+    background-image: "../images/blackjack.jpg";
+}
+
 /* messages that only appear at set points */
 .centre-message{
     position: absolute;
