@@ -4,88 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <meta name="keywords" content="Blackjack, cardgame, card counting, gambling">
     <meta name="author" content="Oran Cassidy">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Blackjack</title>
 </head>
 <body>
-    <!-- welcome message -->
-    <div id="welcome" class="centre-message">
-        <h1>Welcome to the digital blackjack table!</h1>
-        <h2>You can't gamble real money, but have 1,000 virtual chips, complements of the house.</h2>
-        <h2>Enjoy! &#128526;</h2>
-        <button onclick="divDisappear('welcome'); divAppear('gamble-amount'); updateChips(1000); cardDeck.shuffle();" class="centre-message-button">Play Blackjack</button>
-    </div>
-
-    <!-- bet prompt -->
-    <div id="gamble-amount" class="centre-message">
-        <h2>How many chips do you want to bet?</h2>
-        <form action="javascript: updateBet(NaN); divDisappear('gamble-amount'); startRound(playerHand, cardDeck, discardDeck);" id="form">
-            <label for="bet">Chips:</label>
-            <input type="number" id="bet" name="bet" min="10" max="200" step="10" value="10">
-            <button type="submit">Bet!</button>
-        </form>
-    </div>
-
-    <!-- end round message -->
-    <div id="end-message" class="centre-message">
-        <h1> </h1>
-        <h2> </h2>
-        <button id="play-again-button" onclick=" " class="centre-message-button"></button>
-    </div>
-
-    <!-- main content -->
-    <main>
-        <!-- div for displaying how many chips the player has -->
-        <div id="chips-div" class="num-display">
-        <img src="assets/images/chips-icon.webp" alt="Casino chips">
-        <h2><span id="chips"> 0</span></h2>
-        </div>
-        <div id="bet-div" class="num-display">
-            <img src="assets/images/bet-icon.webp" alt="Bet amount">
-            <h2><span id="bet-chips"> 0</span></h2>
-        </div>
-
-        <div id = "dealer-value-div" class="num-display value-display">
-            <h2><img src="assets/images/hand-icon.png" alt="Value of dealer's hand"><span id="dealer-value">0</span></h2>
-        </div>
-
-        <div id="dealer-hand" class="hand">
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-        </div>
-
-        <div id="table">
-            <div id = "player-value-div" class="num-display value-display">
-                <h2><img src="assets/images/hand-icon.png" alt="Value of player's hand"><span id="player-value">0</span></h2>
+    <div id="about-page">
+        <header>
+            <a href="index.html">
+                <h1 id="logo">Blackjack</h1>
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="play.html">Play</a>
+                    </li>
+                    <li>
+                        <a href="index.html" class="active">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <body>
+            <div id="about-page-box" class="centre-message">
+                <h1>About</h1>
+                <h2>On this website, you can endlessly play blackjack with fake chips. This can be to practice card counting, or to just have fun playing this classic casino game.</h2>
+                <button onclick="location.href='play.html'" class="centre-message-button">Play</button>
             </div>
-        </div>
-
-        <div id="player-hand" class="hand">
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-            <div class="card-div"><img src=" " alt=""></div>
-        </div>
-
-        <div id="game-buttons-div">
-            <button id="stay" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 1);">Stand</button>
-            <button id="hit" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 2);">Hit!</button>
-            <button id="double-down" class="game-button" onclick="roundContinue(playerHand, dealerHand, cardDeck, discardDeck, 3);">Double down!</button>
-        </div>
-    </main>
+        </body>
+    </div>
     <footer>
         <ul class="centered">
             <li>
@@ -98,8 +47,6 @@
         <p class="centered">No rights reserved, use this website and all aspects of it as you wish!</p>
     </footer>
 
-    <!-- javascript -->
-    <script src="assets/js/script.js" type="text/javascript"></script>
     <!-- font awesome script -->
     <script src="https://kit.fontawesome.com/acee5056be.js" crossorigin="anonymous"></script>
 </body>

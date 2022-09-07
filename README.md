@@ -7,6 +7,14 @@
 ## Features 
 
 ### Existing Features
+- __About Page__
+  - This is a page which appears when the user accesses the site. It tells the user what the site is for and why they might want to use it. 
+  - Features a background image to give a straightforward indication of the site's purpose.
+  - This is valuable to the user as it welcomes them to the website. 
+  \
+  &nbsp;
+  ![About](assets/readme_images/about.PNG)
+
 - __Central message boxes__
 
     - These are divs which appear and disappear for the user depending where the accompanying script is in its flow control.
@@ -102,7 +110,25 @@ I also wanted to add a means of having the cards animate as they appeared, prefe
 
 &nbsp;
 
+***Better card interface***
+In it's current state, the way that this website displays the cards is not ideal for phone users. I would like to try and develop a better interface for displaying the cards being played that would be more compact and easier to make responsive. This would require a massive overhaul and refactoring of large portions of associated back-end logic however.
+
+&nbsp;
+
+***Nav bar in game page***
+The lack of a navigation bar in the game page is a problem from a UX perspective as the user cannot navigate away from the page to the about page without using the back button on their browser. However, the interface of the game page is already quite crowded, so it was not possible to fit this in without a major redesign of the entire page. 
+
+&nbsp;
+
 ## Testing 
+### About page and nav bar
+- The following table goes through each button and link that is in the about page and navigation bar
+|Button/link            |Expected Behavior                                  |What Occurs                                        |Working as intended?   |
+|:----------------------|:--------------------------------------------------|:--------------------------------------------------|:---------------------:|
+|Play (button)          |Redirects to play.html                             |Redirects to play.html                             |✔                     |
+|Play (link)            |Redirects to play.html                             |Redirects to play.html                             |✔                     |
+|About                  |Redirects to index.html                            |Redirects to index.html                            |✔                     |
+
 ### Central message box
 - The following table goes through each button that appears in the central message boxes, with columns detailing what the button should do when clicked, what it does when clicked, and a check to validate whether these buttons can be considered working or not.
 
@@ -203,6 +229,7 @@ Throughout the project, the appearance of the website was checked using firefox 
 - Figuring out how to make the logic for handling aces in the game was found using this answer on [StackOverflow](https://stackoverflow.com/questions/13518758/how-to-decide-when-ace-should-count-as-1-or-11-in-blackjack-game)
 - To build the javascript, [Python Tutor](https://pythontutor.com/) was used to visualize the data structures and do some initial debugging.
 - For refreshing certain concepts and documentations, I used [W3S Schools](https://www.w3schools.com/).
+- To build the nav bar and about page, code was taken from the Code Institute Love Running walkthrough project
 
 &nbsp;
 ### Content 
@@ -220,3 +247,4 @@ The following lists all groups of assets in the /assets/images folder, with a li
   - bet-icon - [Iconfinder](https://www.iconfinder.com/icons/508155/bet_betting_coin_hand_pay_place_bet_poker_chip_icon)
   - hand-icon - [Noun Project](https://thenounproject.com/browse/icons/term/playing-cards/?iconspage=1)
   - All card assets - [itch.io](https://gamesupply.itch.io/frenchcard)
+  - Blackjack table image on main page [Game Tables and More](https://www.gametablesonline.com/blog/blackjack-beginners/)
